@@ -1,7 +1,8 @@
 package JogoGeneralTrabalho;
 
 public class Jogador {
-    private Jogador player;
+    private String nome = new String();
+    private String tipoJogador = new String();
 
     public Jogador 
 

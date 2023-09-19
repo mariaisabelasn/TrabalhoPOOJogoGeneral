@@ -16,14 +16,23 @@ A aplicação poderá executar n (indeterminadas) rodadas para os jogadores (hum
 (2) Cada jogador (humano ou máquina), em sua vez, tem apenas uma chance de arremessar os dados.
 
 (3) O resultado obtido ao final do arremesso deve ser classificado, pelo próprio jogador, como uma das seguintes 13 possibilidades:
+
 -Jogada de 1: um certo número de dados (de 0 a 5) marcando o número 1; sendo que a jogada vale mais pontos conforme a quantidade de dados que marcarem o número 1. Por exemplo: 1-1-1-4-5 vale 3 pontos.
+
 -Jogadas de 2, 3, 4, 5 e 6: correspondentes à jogada de 1 para os demais números. Por exemplo: 3-3-4-4-5 vale 6 pontos se for considerada uma jogada de 3; ou 8 pontos se for considerada uma jogada de 4; ou ainda 5 pontos se for uma jogada de 5.
+
 -Trinca (T): três dados marcando o mesmo número. Vale a soma dos 5 dados. Exemplo: 4-4-4-5-6 vale 23 pontos.
+
 -Quadra (Q): quatro dados marcando o mesmo n´umero. Vale a soma dos 5 dados. Exemplo: 1-5-5-5-5 vale 21 pontos.
+
 -Full-hand (F) ou Full-house: uma trinca e um par (exemplo: 2-2-2-6-6). Vale 25 pontos para qualquer combinação.
+
 -Sequência alta (S+): 2-3-4-5-6. Vale 30 pontos.
+
 -Sequência baixa (S-): 1-2-3-4-5. Vale 40 pontos.
+
 -General (G): cinco dados marcando o mesmo n´umero (por exemplo: 4-4-4-4-4). Vale 50 pontos.
+
 -Jogada aleatória (X) : qualquer combinação. Vale a soma dos 5 dados. Por exemplo: 1-4-4-5-6 vale 20 pontos.
 
 (4) O resultado deverá ser mostrado na forma de cartela, na coluna do jogador e na linha correspondente à jogada. Aquela linha (e portanto aquela jogada) não poderá mais ser utilizada pelo jogador na mesma rodada.

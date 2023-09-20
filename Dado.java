@@ -5,7 +5,7 @@ import java.util.Random;
 public class Dado {
      private int sideUp;
 
-        public Die(){
+        public Dado(){
             sideUp = 1;
         }
 

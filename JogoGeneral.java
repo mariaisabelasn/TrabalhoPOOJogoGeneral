@@ -32,9 +32,15 @@ public class JogoGeneral {
             }
 
         }while(i!=5)
-        teste
+    
     }
     
-}
+    }
+
+    public void pontuarJogada(){
+        if(validarJogada(jogadas, null)){
+            if
+        }
+    }
     
 }

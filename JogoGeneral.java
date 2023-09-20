@@ -42,7 +42,48 @@ public class JogoGeneral {
         }while(i!=5)
         teste
     }
-    
-}
+    if(njogada=="3"){
+        do{
+            if(dados[i]==3){
+                return 1; //certo
+            }
+
+        }while(i!=5);
+    }
+    if(njogada=="4"){
+        do{
+            if(dados[i]==4){
+                return 1; //certo
+            }
+
+        }while(i!=5);
+    }
+    if(njogada=="5"){
+        do{
+            if(dados[i]==5){
+                return 1; //certo
+            }
+
+        }while(i!=5);
+    }
+    if(njogada=="6"){
+        do{
+            if(dados[i]==6){
+                return 1; //certo
+            }
+
+        }while(i!=5);
+    }
+    if(njogada=="T"){
+        do{
+            if(dados[i]==3){
+                return 1; //certo
+            }
+
+        }while(i!=5);
+    }
+
+}kkkkkk
+>>>>>>> f6c2beeb63d440ea62f34d955e2ad0929e26972d
     
 }

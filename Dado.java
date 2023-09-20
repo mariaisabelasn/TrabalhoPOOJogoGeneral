@@ -17,5 +17,6 @@ public class Dado {
             Random x = new Random();
             this.sideUp = x.nextInt(6) + 1;
         }
+        
     
 }

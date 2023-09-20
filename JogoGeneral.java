@@ -19,12 +19,18 @@ public class JogoGeneral {
         }
     }
 
-    toString String (Dados dados){
-
-
+    toString String (){ //transforma o valor dos dados em string
+        return dados;
     }
 
-    public Boolean validarJogada(){ //vai verificar se a jogada escolhida é valida
+    public Boolean validarJogada(int njogada, Dado[] dados){ //vai verificar se a jogada escolhida é valida retorna 1 vdd 0 falso
+        int i=0;
+    if(njogada==1){
+        do{
+            if(dados[i]!)
+
+        }while(dados[i]==1 || i==5)
+    }
     
 }
     

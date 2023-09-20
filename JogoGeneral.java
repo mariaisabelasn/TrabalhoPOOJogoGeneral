@@ -18,5 +18,9 @@ public class JogoGeneral {
             this.dados[i].roll();
         }
     }
+
+    public Boolean validarJogada(){
+    
+}
     
 }

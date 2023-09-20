@@ -83,7 +83,7 @@ public class JogoGeneral {
         }while(i!=5);
     }
 
-}kkkkkk
->>>>>>> f6c2beeb63d440ea62f34d955e2ad0929e26972d
+}
+
     
 }

@@ -6,14 +6,14 @@ public class JogoGeneral {
 
     public JogoGeneral(){
         for(int i = 0; i < 5; i++){
-            this.dados[i] = new Dado();
+            this.dados[i] = new Dado(); // cria os 5 dados
         }
         for(int j = 0; j < 13; j++){
             this.jogadas[i] = -1;   // -1 marca que a jogada em questao ainda nao foi realizada.
         }
     }
 
-    public void jogarDados(){
+    public void jogarDados(){ //resultados  dos 5 dados 
         for(int i = 0; i < 5; i++){
             this.dados[i].roll();
         }

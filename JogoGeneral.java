@@ -1,8 +1,8 @@
 package JogoGeneralTrabalho;
 
 public class JogoGeneral {
-     Dado dados = new Dado[5];
-     int jogadas = new int[13];
+    private[] Dado dados = new Dado[5];
+    private[] int jogadas = new int[13];
 
     public JogoGeneral() {
         for (int i = 0; i < 5; i++) {
@@ -134,6 +134,111 @@ public class JogoGeneral {
         }
 
     }
-}
+}// macri
+
+
+    public int pontuarJogada(String njogada, Dado[] dados){
+        if(validarJogada(njogada, dados)){ //se a jogada for validada
+            int i = 0;
+            int cont = 0;
+            if(njogada=="1"){
+                do{
+                    if(dados[i].getSideUp()==1){
+                        cont += dados[i].getSideUp();
+                    }
+
+                }while(i!=5);
+
+                return cont;
+            }
+            else if(njogada=="2"){
+                do{
+                    if(dados[i].getSideUp()==2){
+                        cont += dados[i].getSideUp();
+                    }
+
+                }while(i!=5);
+
+                return cont;
+            
+            }
+            else if(njogada=="3"){
+                do{
+                    if(dados[i].getSideUp()==3){
+                        cont += dados[i].getSideUp();
+                    }
+
+                }while(i!=5);
+                
+                return cont;
+            }
+            else if(njogada=="4"){
+                do{
+                    if(dados[i].getSideUp()==4){
+                        cont += dados[i].getSideUp();
+                    }
+
+                }while(i!=5);
+
+                return cont;
+            }
+            else if(njogada=="5"){
+                do{
+                    if(dados[i].getSideUp()==5){
+                        cont += dados[i].getSideUp();
+                    }
+
+                }while(i!=5);
+
+                return cont;
+            }
+            else if(njogada=="6"){
+                do{
+                    if(dados[i].getSideUp()==6){
+                        cont += dados[i].getSideUp();
+                    }
+
+                }while(i!=5);
+
+                return cont;
+            }
+            else if(njogada=="T"){
+                do{
+                    cont += dados[i].getSideUp();
+                    i++;
+                }while(i!=5);
+
+                return cont;
+            }
+            else if(njogada=="Q"){
+                do{
+                    cont += dados[i].getSideUp();
+                    i++;
+                }while(i!=5);
+
+                return cont;
+            }
+            else if(njogada=="F"){
+                return 25;
+            }
+            else if(njogada=="S+"){
+                return 30;
+            }
+            else if(njogada=="S-"){
+                return 40;
+            }
+            else if(njogada=="G"){
+                return 50;
+            }
+            else if(njogada=="X"){
+                do{
+                    cont += dados[i].getSideUp();
+                    i++;
+                }while(i!=5);
+
+                return cont;
+            }
+        }
+    }
 
 }

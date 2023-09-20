@@ -27,9 +27,11 @@ public class JogoGeneral {
         int i=0;
     if(njogada==1){
         do{
-            if(dados[i]!)
+            if(dados[i]==1){
+                break;
+            }
 
-        }while(dados[i]==1 || i==5)
+        }while(i!=5)
     }
     
 }

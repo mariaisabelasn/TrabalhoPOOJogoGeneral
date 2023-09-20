@@ -23,24 +23,26 @@ public class JogoGeneral {
         return dados;
     }
 
-    public Boolean validarJogada(int njogada, Dado[] dados){ //vai verificar se a jogada escolhida é valida retorna 1 vdd 0 falso
+    public Boolean validarJogada(String njogada, Dado[] dados){ //vai verificar se a jogada escolhida é valida retorna 1 vdd 0 falso
         int i=0;
-    if(njogada==1){
+    if(njogada=="1"){
         do{
             if(dados[i]==1){
-                break;
+                return 1; //certo
+            }
+
+        }while(i!=5);
+    }
+    if(njogada=="2"){
+        do{
+            if(dados[i]==2){
+               return 1; //certo
             }
 
         }while(i!=5)
-    
+        teste
     }
     
-    }
-
-    public void pontuarJogada(){
-        if(validarJogada(jogadas, null)){
-            if
-        }
-    }
+}
     
 }

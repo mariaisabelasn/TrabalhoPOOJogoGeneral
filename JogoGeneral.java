@@ -13,13 +13,18 @@ public class JogoGeneral {
         }
     }
 
-    public void jogarDados(){ //resultados  dos 5 dados 
+    public void rolarDados(){ //resultados  dos 5 dados 
         for(int i = 0; i < 5; i++){
             this.dados[i].roll();
         }
     }
 
-    public Boolean validarJogada(){
+    toString String (Dados dados){
+
+
+    }
+
+    public Boolean validarJogada(){ //vai verificar se a jogada escolhida é valida
     
 }
     

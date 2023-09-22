@@ -4,7 +4,10 @@ public class Jogador {
     private String nome = new String();
     private String tipoJogador = new String();
 
-    public Jogador 
+    public Jogador (){
+        nome=null;
+        tipoJogador=null;
+    }
 
 
     

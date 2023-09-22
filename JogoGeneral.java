@@ -1,8 +1,8 @@
 package JogoGeneralTrabalho;
 
 public class JogoGeneral {
-    private[] Dado dados = new Dado[5];
-    private[] int jogadas = new int[13];
+    private Dado dados = new Dado[5];
+    private int jogadas = new int[13];
 
     public JogoGeneral() {
         for (int i = 0; i < 5; i++) {
@@ -23,218 +23,305 @@ public class JogoGeneral {
         return dados;
     }
 
-    public Boolean validarJogada(String njogada, Dado[] dados){ //vai verificar se a jogada escolhida é valida retorna 1 vdd 0 falso
-    int i=0, cont1=0, cont2=0, cont3=0, cont4=0, cont5=0, cont6=0;
-    if(njogada=="1"){
-        do{
-            if(dados[i].getSideUp()==1){
-                return 1; //certo
+    public Boolean validarJogada(int njogada) { // vai verificar se a jogada escolhida é valida retorna
+        int i = 0, cont1 = 0, cont2 = 0, cont3 = 0, cont4 = 0, cont5 = 0, cont6 = 0;
+
+        if (njogada == 1) {
+            if (jogadas[0] != -1) { //verifica se dentro das jogadas feitas essa já n está preenchida
+                System.out.println("Jodada já utilizada.");
+                return false;
             }
-            i++;
-        }while(i!=5);
-    }
-    else if(njogada=="2"){
-        do{
-            if(dados[i].getSideUp()==2){
-               return 1; //certo
+            do {
+                if (this.dados[i].getSideUp() == 1) {
+                    return true; // certo
+                }
+                i++;
+            } while (i != 5);
+        } 
+        else if (njogada == 2) {
+            if(jogadas[1]!=-1){
+                System.out.println("Jodada já utilizada.");
+                return false;
+              }
+            do {
+                if (this.dados[i].getSideUp() == 2) {
+                    return true; // certo
+                }
+                i++;
+            } while (i != 5);
+        } 
+        else if (njogada == 3) {
+            if(jogadas[2]!=-1){
+                System.out.println("Jodada já utilizada.");
+                return false;
+              }
+            do {
+                if (this.dados[i].getSideUp() == 3) {
+                    return true; // certo
+                }
+                i++;
+            } while (i != 5);
+        } 
+        else if (njogada == 4) {
+            if(jogadas[3]!=-1){
+                System.out.println("Jodada já utilizada.");
+                return false;
+              }
+            do {
+                if (this.dados[i].getSideUp() == 4) {
+                    return true; // certo
+                }
+                i++;
+            } while (i != 5);
+        } 
+        else if (njogada == 5) {
+            if(jogadas[4]!=-1){
+                System.out.println("Jodada já utilizada.");
+                return false;
+              }
+            do {
+                if (this.dados[i].getSideUp() == 5) {
+                    return true; // certo
+                }
+                i++;
+            } while (i != 5);
+        } 
+        else if (njogada == 6) {
+            if(jogadas[5]!=-1){
+                System.out.println("Jodada já utilizada.");
+                return false;
+              }
+            do {
+                if (this.dados[i].getSideUp() == 6) {
+                    return true; // certo
+                }
+                i++;
+            } while (i != 5);
+        } 
+        else if (njogada == 7) { //trinca
+            if(jogadas[6]!=-1){
+                System.out.println("Jodada já utilizada.");
+                return false;
+              }
+            do {
+                if (this.dados[i].getSideUp() == 1) {
+                    cont1++;
+                } 
+                else if (this.dados[i].getSideUp() == 2) {
+                    cont2++;
+                } 
+                else if (this.dados[i].getSideUp() == 3) {
+                    cont3++;
+                } 
+                else if (this.dados[i].getSideUp() == 4) {
+                    cont4++;
+                } 
+                else if (this.dados[i].getSideUp() == 5) {
+                    cont5++;
+                } 
+                else if (this.dados[i].getSideUp() == 6) {
+                    cont6++;
+                }
+
+                i++;
+            } while (i != 5);
+            if (cont1 == 3 || cont2 == 3 || cont3 == 3 || cont4 == 3 || cont5 == 3 || cont6 == 3) { // é trinca
+                return true;
+            } else {
+                return false;
             }
-            i++;
-        }while(i!=5);
-    }
-    else if(njogada=="3"){
-        do{
-            if(dados[i].getSideUp()==3){
-                return 1; //certo
-            }
-            i++;
-        }while(i!=5);
-    }
-    else if(njogada=="4"){
-        do{
-            if(dados[i].getSideUp()==4){
-                return 1; //certo
-            }
-            i++;
-        }while(i!=5);
-    }
-    else if(njogada=="5"){
-        do{
-            if(dados[i].getSideUp()==5){
-                return 1; //certo
-            }
-            i++;
-        }while(i!=5);
-    }
-    else if(njogada=="6"){
-        do{
-            if(dados[i].getSideUp()==6){
-                return 1; //certo
-            }
-            i++;
-        }while(i!=5);
-    }
-    else if(njogada=="T"){
-        do{
-            if(dados[i].getSideUp()==1){
-                cont1++;
-            }
-            else if(dados[i].getSideUp()==2){
-                cont2++;
-            }
-            else if(dados[i].getSideUp()==3){
-                cont3++;
-            }
-            else if(dados[i].getSideUp()==4){
-                cont4++;
-            }
-            else if(dados[i].getSideUp()==5){
-                cont5++;
-            }
-            else if(dados[i].getSideUp()==6){
-                cont6++;
+        }
+        else if (njogada == 8) { //quadrula
+            if(jogadas[7]!=-1){
+                System.out.println("Jodada já utilizada.");
+                return false;
+              }
+            do {
+                if (this.dados[i].getSideUp() == 1) {
+                    cont1++;
+                } else if (this.dados[i].getSideUp() == 2) {
+                    cont2++;
+                } else if (this.dados[i].getSideUp() == 3) {
+                    cont3++;
+                } else if (this.dados[i].getSideUp() == 4) {
+                    cont4++;
+                } else if (this.dados[i].getSideUp() == 5) {
+                    cont5++;
+                } else if (this.dados[i].getSideUp() == 6) {
+                    cont6++;
+                }
+                i++;
+            } while (i != 5);
+
+            if (cont1 == 4 || cont2 == 4 || cont3 == 4 || cont4 == 4 || cont5 == 4 || cont6 == 4) { // é trinca
+                return true;
+            } else {
+                return false;
             }
 
-            i++;
-        }while(i!=5);
-        if(cont1==3|| cont2==3|| cont3==3 ||cont4==3 || cont5==3|| cont6==3){ //é trinca
-                return 1;
         }
+        else if(njogada==9){//FULL HOUSE
+
+        }
+        else if(njogada==10){//Sequencia alta
+            if(jogadas[9]!=-1){
+                System.out.println("Jodada já utilizada.");
+                return false;
+              }
+            int vet[5]={2,3,4,5,6};//vetor como a jogada de sequencia alta deve ser
+            for(int i=0; i<5; i++){
+                if(this.dados[i]!=vet[i]){
+                    return false;
+                }
+            }
+            return true; //se passar pelo for e o primeiro if sem problemas
+
+        }
+        else if(njogada==11){//Sequencia Baixa
+            if(jogadas[10]!=-1){
+                System.out.println("Jodada já utilizada.");
+                return false;
+              }
+            int vet[5]={1,2,3,4,5};//vetor como a jogada de sequencia baixa deve ser
+            for(int i=0; i<5; i++){
+                if(this.dados[i]!=vet[i]){
+                    return false;
+                }
+            }
+            return true; //se passar pelo for e o primeiro if sem problemas
+        }
+        else if(njogada==12){//General
+            if(jogadas[11]!=-1){
+                System.out.println("Jodada já utilizada.");
+                return false;
+              }
+            int indice =this.dados[0];
+            for (int i=0; i<5; i++){
+                if(indice==this.dados[i].getSideUp()){
+                    cont++;
+                }
+
+            }   
+            if(cont==5){
+                return true;
+            }
             else{
-                return 0;
+                return false;
             }
-    }   
-    if(njogada == "Q"){
-            do{
-            if(dados[i].getSideUp()==1){
-                cont1++;
+        }
+        else if(njogada==13){//jogada aleatória
+            if(jogadas[11]!=-1){
+                System.out.println("Jodada já 
+                utilizada.");
+                return false;
             }
-            else if(dados[i].getSideUp()==2){
-                cont2++;
+            else {
+                return true;
             }
-            else if(dados[i].getSideUp()==3){
-                cont3++;
-            }
-            else if(dados[i].getSideUp()==4){
-                cont4++;
-            }
-            else if(dados[i].getSideUp()==5){
-                cont5++;
-            }
-            else if(dados[i].getSideUp()==6){
-                cont6++;
-            }
-            i++;
-        }while(i!=5);
 
-        if(cont1==4|| cont2==4|| cont3==4 ||cont4==4 || cont5==4|| cont6==4){ //é trinca
-                return 1;
-         }
-        else{
-                return 0;
         }
 
     }
-}// macri
 
-
-    public int pontuarJogada(String njogada, Dado[] dados){
-        if(validarJogada(njogada, dados)){ //se a jogada for validada
+    public int puntuarJogada(int njogada) {
+        if (validarJogada(njogada)) { // se a jogada for validada
             int i = 0;
             int cont = 0;
-            if(njogada=="1"){
-                do{
-                    if(dados[i].getSideUp()==1){
+            if (njogada == 1) {
+                do {
+                    if (dados[i].getSideUp() == 1) {
                         cont += dados[i].getSideUp();
                     }
 
-                }while(i!=5);
+                } while (i != 5);
 
                 return cont;
             }
-            else if(njogada=="2"){
-                do{
-                    if(dados[i].getSideUp()==2){
+            else if (njogada == 2) {
+                do {
+                    if (dados[i].getSideUp() == 2) {
                         cont += dados[i].getSideUp();
                     }
 
-                }while(i!=5);
+                } while (i != 5);
 
                 return cont;
-            
-            }
-            else if(njogada=="3"){
-                do{
-                    if(dados[i].getSideUp()==3){
+
+            } 
+            else if (njogada == 3) {
+                do {
+                    if (dados[i].getSideUp() == 3) {
                         cont += dados[i].getSideUp();
                     }
 
-                }while(i!=5);
-                
+                } while (i != 5);
+
                 return cont;
-            }
-            else if(njogada=="4"){
-                do{
-                    if(dados[i].getSideUp()==4){
+            } 
+            else if (njogada == 4) {
+                do {
+                    if (dados[i].getSideUp() == 4) {
                         cont += dados[i].getSideUp();
                     }
 
-                }while(i!=5);
+                } while (i != 5);
 
                 return cont;
-            }
-            else if(njogada=="5"){
-                do{
-                    if(dados[i].getSideUp()==5){
+            } 
+            else if (njogada == 5) {
+                do {
+                    if (dados[i].getSideUp() == 5) {
                         cont += dados[i].getSideUp();
                     }
 
-                }while(i!=5);
+                } while (i != 5);
 
                 return cont;
-            }
-            else if(njogada=="6"){
-                do{
-                    if(dados[i].getSideUp()==6){
+            } 
+            else if (njogada == 6) {
+                do {
+                    if (dados[i].getSideUp() == 6) {
                         cont += dados[i].getSideUp();
                     }
 
-                }while(i!=5);
+                } while (i != 5);
 
                 return cont;
-            }
-            else if(njogada=="T"){
-                do{
+            } 
+            else if (njogada == 7) { //trinca
+                do {
                     cont += dados[i].getSideUp();
                     i++;
-                }while(i!=5);
+                } while (i != 5);
 
                 return cont;
-            }
-            else if(njogada=="Q"){
-                do{
+            } 
+            else if (njogada == 8) {//quarta
+                do {
                     cont += dados[i].getSideUp();
                     i++;
-                }while(i!=5);
+                } while (i != 5);
 
                 return cont;
-            }
-            else if(njogada=="F"){
-                return 25;
-            }
-            else if(njogada=="S+"){
+            } 
+            else if (njogada == 9) {
+                i=25;
+                return i;
+            } 
+            else if (njogada == 10) {
                 return 30;
-            }
-            else if(njogada=="S-"){
+            } 
+            else if (njogada == 11) {
                 return 40;
-            }
-            else if(njogada=="G"){
+            } 
+            else if (njogada == 12) {
                 return 50;
-            }
-            else if(njogada=="X"){
-                do{
+            } 
+            else if (njogada == 13) {
+                do {
                     cont += dados[i].getSideUp();
                     i++;
-                }while(i!=5);
+                } while (i != 5);
 
                 return cont;
             }
@@ -243,4 +330,24 @@ public class JogoGeneral {
 
 }
 
-mabel
+// boolean valido= falso;
+   
+// for (int j=0; j<5; j++){
+//       int indice=this.dados[j];
+//             for (i=0; i<5; i++){
+//                 if(indice==this.dados[i].getSideUp()){
+//                     cont++;
+//                 }
+
+//             }   
+//           if (cont>=x){
+//           valido=true
+// }
+          
+// }
+//  if(valido==true){
+//                 return true;
+//             }
+//             else{
+//                 return false;
+//             }

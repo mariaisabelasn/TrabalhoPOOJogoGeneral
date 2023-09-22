@@ -103,31 +103,38 @@ public class JogoGeneral {
                 System.out.println("Jodada já utilizada.");
                 return false;
               }
-            do {
-                if (this.dados[i].getSideUp() == 1) {
-                    cont1++;
-                } 
-                else if (this.dados[i].getSideUp() == 2) {
-                    cont2++;
-                } 
-                else if (this.dados[i].getSideUp() == 3) {
-                    cont3++;
-                } 
-                else if (this.dados[i].getSideUp() == 4) {
-                    cont4++;
-                } 
-                else if (this.dados[i].getSideUp() == 5) {
-                    cont5++;
-                } 
-                else if (this.dados[i].getSideUp() == 6) {
-                    cont6++;
-                }
+            // do {
+            //     if (this.dados[i].getSideUp() == 1) {
+            //         cont1++;
+            //     } 
+            //     else if (this.dados[i].getSideUp() == 2) {
+            //         cont2++;
+            //     } 
+            //     else if (this.dados[i].getSideUp() == 3) {
+            //         cont3++;
+            //     } 
+            //     else if (this.dados[i].getSideUp() == 4) {
+            //         cont4++;
+            //     } 
+            //     else if (this.dados[i].getSideUp() == 5) {
+            //         cont5++;
+            //     } 
+            //     else if (this.dados[i].getSideUp() == 6) {
+            //         cont6++;
+            //     }
 
-                i++;
-            } while (i != 5);
-            if (cont1 == 3 || cont2 == 3 || cont3 == 3 || cont4 == 3 || cont5 == 3 || cont6 == 3) { // é trinca
+            //     i++;
+            // } while (i != 5);
+            // if (cont1 == 3 || cont2 == 3 || cont3 == 3 || cont4 == 3 || cont5 == 3 || cont6 == 3) { // é trinca
+            //     return true;
+            // } 
+            // else {
+            //     return false;
+            // }
+             if(contador(3)){
                 return true;
-            } else {
+            }
+            else{
                 return false;
             }
         }
@@ -136,31 +143,39 @@ public class JogoGeneral {
                 System.out.println("Jodada já utilizada.");
                 return false;
               }
-            do {
-                if (this.dados[i].getSideUp() == 1) {
-                    cont1++;
-                } else if (this.dados[i].getSideUp() == 2) {
-                    cont2++;
-                } else if (this.dados[i].getSideUp() == 3) {
-                    cont3++;
-                } else if (this.dados[i].getSideUp() == 4) {
-                    cont4++;
-                } else if (this.dados[i].getSideUp() == 5) {
-                    cont5++;
-                } else if (this.dados[i].getSideUp() == 6) {
-                    cont6++;
-                }
-                i++;
-            } while (i != 5);
+            // do {
+            //     if (this.dados[i].getSideUp() == 1) {
+            //         cont1++;
+            //     } else if (this.dados[i].getSideUp() == 2) {
+            //         cont2++;
+            //     } else if (this.dados[i].getSideUp() == 3) {
+            //         cont3++;
+            //     } else if (this.dados[i].getSideUp() == 4) {
+            //         cont4++;
+            //     } else if (this.dados[i].getSideUp() == 5) {
+            //         cont5++;
+            //     } else if (this.dados[i].getSideUp() == 6) {
+            //         cont6++;
+            //     }
+            //     i++;
+            // } while (i != 5);
 
-            if (cont1 == 4 || cont2 == 4 || cont3 == 4 || cont4 == 4 || cont5 == 4 || cont6 == 4) { // é trinca
+            // if (cont1 == 4 || cont2 == 4 || cont3 == 4 || cont4 == 4 || cont5 == 4 || cont6 == 4) {
+            //     return true;
+            // } 
+            // else {
+            //     return false;
+            // }
+            if(contador(4)){
                 return true;
-            } else {
+            }
+            else{
                 return false;
             }
 
         }
         else if(njogada==9){//FULL HOUSE
+            
 
         }
         else if(njogada==10){//Sequencia alta
@@ -195,19 +210,26 @@ public class JogoGeneral {
                 System.out.println("Jodada já utilizada.");
                 return false;
               }
-            int indice =this.dados[0];
-            for (int i=0; i<5; i++){
-                if(indice==this.dados[i].getSideUp()){
-                    cont++;
-                }
+            // int indice =this.dados[0];
+            // for (int i=0; i<5; i++){
+            //     if(indice==this.dados[i].getSideUp()){
+            //         cont++;
+            //     }
 
-            }   
-            if(cont==5){
+            // }   
+            // if(cont==5){
+            //     return true;
+            // }
+            // else{
+            //     return false;
+            // }
+            if(contador(5)){
                 return true;
             }
             else{
                 return false;
             }
+
         }
         else if(njogada==13){//jogada aleatória
             if(jogadas[11]!=-1){
@@ -236,7 +258,7 @@ public class JogoGeneral {
                 } while (i != 5);
 
                 return cont;
-            }
+            } 
             else if (njogada == 2) {
                 do {
                     if (dados[i].getSideUp() == 2) {
@@ -287,8 +309,8 @@ public class JogoGeneral {
                 } while (i != 5);
 
                 return cont;
-            } 
-            else if (njogada == 7) { //trinca
+            }
+            else if (njogada == 7) { // trinca
                 do {
                     cont += dados[i].getSideUp();
                     i++;
@@ -296,7 +318,7 @@ public class JogoGeneral {
 
                 return cont;
             } 
-            else if (njogada == 8) {//quarta
+            else if (njogada == 8) {// quarta
                 do {
                     cont += dados[i].getSideUp();
                     i++;
@@ -305,7 +327,7 @@ public class JogoGeneral {
                 return cont;
             } 
             else if (njogada == 9) {
-                i=25;
+                i = 25;
                 return i;
             } 
             else if (njogada == 10) {
@@ -328,26 +350,33 @@ public class JogoGeneral {
         }
     }
 
+    public Boolean contador(int x){ // recebe a quantidade que deve ser repetido (por ex da quadra x=4)
+        boolean resultado = false;
+        int posicao;
+
+        for (int j=0; j<5; j++){
+            cont=0;
+            posicao=this.dados[j].getSideUp();
+
+                    for (i=0; i<5; i++){
+                        if(indice==this.dados[i].getSideUp()){
+                            cont++;
+                        }
+
+                    }   
+
+            if (cont>=x){
+                resultado=true
+            }
+                
+        }
+        if(resultado==true){
+            return true;
+        }
+        else{
+            return false;
+        }
+ }
+
 }
 
-// boolean valido= falso;
-   
-// for (int j=0; j<5; j++){
-//       int indice=this.dados[j];
-//             for (i=0; i<5; i++){
-//                 if(indice==this.dados[i].getSideUp()){
-//                     cont++;
-//                 }
-
-//             }   
-//           if (cont>=x){
-//           valido=true
-// }
-          
-// }
-//  if(valido==true){
-//                 return true;
-//             }
-//             else{
-//                 return false;
-//             }

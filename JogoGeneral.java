@@ -245,11 +245,11 @@ public class JogoGeneral {
 
     }
 
-    public int puntuarJogada(int njogada) {
+    public int pontuarJogada(int njogada) {
         if (validarJogada(njogada)) { // se a jogada for validada
             int i = 0;
             int cont = 0;
-            if (njogada == 1) {
+            if (njogada == 1) { //dá pra juntar para otimizar colocando no mesmo if jogadas 1 2 3 4 5 6 e aleatoria
                 do {
                     if (dados[i].getSideUp() == 1) {
                         cont += dados[i].getSideUp();

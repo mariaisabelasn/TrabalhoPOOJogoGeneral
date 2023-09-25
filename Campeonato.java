@@ -5,7 +5,9 @@ public class Campeonato {
     int cont=0;
 
     public void incluirjogador(nome player, tipoJogador biotipo){
-        players[cont]=()
+        if(cont != 5){
+            players[cont]=(player, biotipo);
+        }
 
     }
        

@@ -11,20 +11,35 @@ public class Campeonato {
 
         do{
             System.out.println ("..:: Menu interativo ::..");
-            System.out.println ("1 - ");
-            System.out.println ("2 - Ola POO" );
-            System.out.println ("3 - Sair");
-            System.out.print ("Entre com uma opcao: ");
+            System.out.println ("(a) Para incluir um jogador ");
+            System.out.println ("(b) Para excluir um jogador (pelo nome)" );
+            System.out.println ("(c) Executar rodada");
+            System.out.print ("(d) Mostrar a cartela de resulatdos [da última jogada realizada]");
+            System.out.print ("(e) Gravar os dados do campeonato em arquivo");
+            System.out.print ("(f) Ler os dados do campeonato em arquivo");
+            System.out.print ("(g) Sair da aplicação");
             opcao = teclado.nextInt( );
 
             switch( opcao ){
-                case 1:
+                case "a":
                     System.out.println ("Ola mundo");
                     break;
-                case 2:
+                case "b":
                     System.out.println ("Ola POO");
                     break;
-                case 3:
+                case "c":
+                    System.out.println ("Saindo");
+                    break;
+                case "d":
+                    System.out.println ("Saindo");
+                    break;
+                case "e":
+                    System.out.println ("Saindo");
+                    break;
+                case "f":
+                    System.out.println ("Saindo");
+                    break;
+                case "g":
                     System.out.println ("Saindo");
                     break;
                 default :

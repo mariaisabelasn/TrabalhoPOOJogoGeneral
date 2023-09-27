@@ -21,9 +21,10 @@ public class JogoGeneral {
         }
     }
 
-   public String toString() { // transforma o valor dos dados em string
+    public String toString() { // transforma o valor dos dados em string
         return Arrays.dados;
     }
+
     public String toString() {
         StringBuilder result = new StringBuilder("Meu Array: [");
 
@@ -379,7 +380,7 @@ public class JogoGeneral {
         }
     }
 
-    public Boolean contador(int x){ // recebe a quantidade que deve ser repetido (por ex da quadra x=4)
+    public Boolean (int x){ // recebe a quantidade que deve ser repetido (por ex da quadra x=4)
         boolean resultado = false;
         int posicao;
 
@@ -388,14 +389,14 @@ public class JogoGeneral {
             posicao=this.dados[j].getSideUp();
 
                     for (i=0; i<5; i++){
-                        if(indice==this.dados[i].getSideUp()){
+                        if(posicao==this.dados[i].getSideUp()){
                             cont++;
                         }
 
                     }   
 
             if (cont>=x){
-                resultado=true
+                resultado=true;
             }
                 
         }

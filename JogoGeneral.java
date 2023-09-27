@@ -1,5 +1,7 @@
 package JogoGeneralTrabalho;
 
+import java.util.Arrays;
+
 public class JogoGeneral {
     private Dado dados = new Dado[5];
     private int jogadas = new int[13];
@@ -19,8 +21,35 @@ public class JogoGeneral {
         }
     }
 
-    toString String() { // transforma o valor dos dados em string
-        return dados;
+   public String toString() { // transforma o valor dos dados em string
+        return Arrays.dados;
+    }
+    public String toString() {
+        StringBuilder result = new StringBuilder("Meu Array: [");
+
+        for (int i = 0; i < meuArray.length; i++) {
+            result.append(meuArray[i]);
+            if (i < meuArray.length - 1) {
+                result.append(", "); // Adiciona uma vírgula e um espaço entre os elementos, exceto no último.
+            }
+        }
+
+        result.append("]");
+        return result.toString();
+    }
+
+    public String toString() {
+        String result = "Meu Array: [";
+    
+        for (int i = 0; i < meuArray.length; i++) {
+            result += meuArray[i];
+            if (i < meuArray.length - 1) {
+                result += ", "; // Adiciona uma vírgula e um espaço entre os elementos, exceto no último.
+            }
+        }
+    
+        result += "]";
+        return result;
     }
 
     public Boolean validarJogada(int njogada) { // vai verificar se a jogada escolhida é valida retorna
@@ -376,6 +405,10 @@ public class JogoGeneral {
         else{
             return false;
         }
+ }
+
+ public void mostrarDados (){
+    System.out.println(this.dados.toString());
  }
 
 }

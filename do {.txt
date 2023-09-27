@@ -1,0 +1,28 @@
+      // do {
+            //     if (this.dados[i].getSideUp() == 1) {
+            //         cont1++;
+            //     } 
+            //     else if (this.dados[i].getSideUp() == 2) {
+            //         cont2++;
+            //     } 
+            //     else if (this.dados[i].getSideUp() == 3) {
+            //         cont3++;
+            //     } 
+            //     else if (this.dados[i].getSideUp() == 4) {
+            //         cont4++;
+            //     } 
+            //     else if (this.dados[i].getSideUp() == 5) {
+            //         cont5++;
+            //     } 
+            //     else if (this.dados[i].getSideUp() == 6) {
+            //         cont6++;
+            //     }
+
+            //     i++;
+            // } while (i != 5);
+            // if (cont1 == 3 || cont2 == 3 || cont3 == 3 || cont4 == 3 || cont5 == 3 || cont6 == 3) { // é trinca
+            //     return true;
+            // } 
+            // else {
+            //     return false;
+            // }

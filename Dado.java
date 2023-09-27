@@ -3,8 +3,9 @@ package JogoGeneralTrabalho;
 import java.util.Random;
 
 public class Dado {
-    private int sideUp;
+    private int sideUp; //parte superior
 
+        //construtor
         public Dado(){
             sideUp = 1;
         }
@@ -17,6 +18,6 @@ public class Dado {
         Random x = new Random();
         this.sideUp = x.nextInt(6) + 1;
     }
-        
+    
     
 }

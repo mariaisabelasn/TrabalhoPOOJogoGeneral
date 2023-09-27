@@ -11,7 +11,7 @@ public class Campeonato {
 
         do{
             System.out.println ("..:: Menu interativo ::..");
-            System.out.println ("1 - Ola mundo");
+            System.out.println ("1 - ");
             System.out.println ("2 - Ola POO" );
             System.out.println ("3 - Sair");
             System.out.print ("Entre com uma opcao: ");

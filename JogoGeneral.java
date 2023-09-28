@@ -388,14 +388,14 @@ public class JogoGeneral {
             posicao=this.dados[j].getSideUp();
 
                     for (i=0; i<5; i++){
-                        if(indice==this.dados[i].getSideUp()){
+                        if(posicao==this.dados[i].getSideUp()){
                             cont++;
                         }
 
                     }   
 
             if (cont>=x){
-                resultado=true
+                resultado=true;
             }
                 
         }

@@ -11,9 +11,13 @@ public class Campeonato {
 
         do{
             System.out.println ("..:: Menu interativo ::..");
-            System.out.println ("1 - ");
-            System.out.println ("2 - Ola POO" );
-            System.out.println ("3 - Sair");
+            System.out.println ("1 - Incluir Jogador");
+            System.out.println ("2 - Remover Jogador" );
+            System.out.println ("3 - Iniciar Campeonato");
+            System.out.println ("4 - Mostrar Cartela");
+            System.out.println ("5 - Gravar em Arquivo");
+            System.out.println ("6 - Ler do Arquivo");
+
             System.out.print ("Entre com uma opcao: ");
             opcao = teclado.nextInt( );
 
@@ -27,10 +31,19 @@ public class Campeonato {
                 case 3:
                     System.out.println ("Saindo");
                     break;
+                case 4:
+                    System.out.println ("Saindo");
+                    break;
+                case 5:
+                    System.out.println ("Saindo");
+                    break;
+                case 6:
+                    System.out.println ("Saindo");
+                    break;
                 default :
                     System.out.println ("Opcao invalida. Tente novamente");
             }
-        }while(opcao != 3);
+        }while(opcao != 6);
 
     }
  }

@@ -3,6 +3,7 @@ package JogoGeneralTrabalho;
 public class Jogador {
     private String nome = new String();
     private String tipoJogador = new String();
+    private JogoGeneral jogoG = new JogoGeneral();
 
     public Jogador (String nome, String tipoJogador){
         this.nome = nome;
@@ -17,10 +18,9 @@ public class Jogador {
         return this.tipoJogador;
     }
 
-    public void jogarDados(){
-        System.out.println("Rolando dados para"+this.nome+"...");
-        .roll();
-    }
+    // public void jogarDados(){
+    //     .roll();
+    // }
 
     // public String toString(){
     //     return(this.nome);

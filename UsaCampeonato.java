@@ -27,8 +27,7 @@ public class Campeonato {
 
             switch( opcao ){
                 case "a":
-                    System.out.println ("Ola mundo");
-                    break;
+                    
                 case "b":
                     System.out.println ("Ola POO");
                     break;

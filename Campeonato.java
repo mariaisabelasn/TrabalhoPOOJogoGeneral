@@ -47,7 +47,7 @@ public class Campeonato {
           }
 
         } 
-         System.out.println("Jogador(a) elseinexistente");
+         System.out.println("Jogador(a) inexistente");
         
     }
        

@@ -161,7 +161,7 @@ public class JogoGeneral {
                 return true;
             }
             else{
-                return false
+                return false;
             }
         }
         else if(njogada==10){//Sequencia alta

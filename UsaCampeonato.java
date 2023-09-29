@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
 public class Campeonato {
-    private Jogador[] players = new Jogador[5];
+    // private Jogador[] players = new Jogador[5]; // vetor dos jogadores presentes no campeonato TIRAR PQ TÁ EM FUNÇÕES
        
     public stat ic void main(String[] args){
 

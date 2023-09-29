@@ -9,7 +9,7 @@ import java.io.ObjectInputStream;
 public class Campeonato {
     // private Jogador[] players = new Jogador[5]; // vetor dos jogadores presentes no campeonato TIRAR PQ TÁ EM FUNÇÕES
        
-    public stat ic void main(String[] args){
+    public static void main(String[] args){
 
         Scanner teclado = new Scanner (System.in);
         int opcao = 0;
@@ -50,7 +50,7 @@ public class Campeonato {
                 default :
                     System.out.println ("Opcao invalida. Tente novamente");
             }
-        }while(opcao != 3);
+        }while(opcao != "g");
 
     }
  }

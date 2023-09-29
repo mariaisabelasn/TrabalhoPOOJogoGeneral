@@ -3,8 +3,8 @@ package JogoGeneralTrabalho;
 import java.util.Arrays;
 
 public class JogoGeneral {
-    private Dado dados = new Dado[5];
-    private int jogadas = new int[13];
+    private Dado[] dados = new Dado[5];
+    private int[] jogadas = new int[13];
 
     public JogoGeneral() {
         for (int i = 0; i < 5; i++) {
@@ -21,35 +21,15 @@ public class JogoGeneral {
         }
     }
 
-    public String toString() { // transforma o valor dos dados em string
-        return Arrays.dados;
-    }
-
-    public String toString() {
-        StringBuilder result = new StringBuilder("Meu Array: [");
-
-        for (int i = 0; i < meuArray.length; i++) {
-            result.append(meuArray[i]);
-            if (i < meuArray.length - 1) {
-                result.append(", "); // Adiciona uma vírgula e um espaço entre os elementos, exceto no último.
-            }
-        }
-
-        result.append("]");
-        return result.toString();
-    }
-
-    public String toString() {
-        String result = "Meu Array: [";
+    public String toString() { //transforma o array de dados em uma string
+        String result = "Valores obtidos: ";
     
         for (int i = 0; i < meuArray.length; i++) {
             result += meuArray[i];
             if (i < meuArray.length - 1) {
-                result += ", "; // Adiciona uma vírgula e um espaço entre os elementos, exceto no último.
+                result += "-"; // Adiciona um traço entre os elementos, exceto no último
             }
         }
-    
-        result += "]";
         return result;
     }
 
@@ -213,8 +193,8 @@ public class JogoGeneral {
                 System.out.println("Jodada já utilizada.");
                 return false;
               }
-            int vet[5]={2,3,4,5,6};//vetor como a jogada de sequencia alta deve ser
-            for(int i=0; i<5; i++){
+            int vet[]={2,3,4,5,6};//vetor como a jogada de sequencia alta deve ser
+            for(i=0; i<5; i++){
                 if(this.dados[i]!=vet[i]){
                     return false;
                 }
@@ -227,8 +207,8 @@ public class JogoGeneral {
                 System.out.println("Jodada já utilizada.");
                 return false;
               }
-            int vet[5]={1,2,3,4,5};//vetor como a jogada de sequencia baixa deve ser
-            for(int i=0; i<5; i++){
+            int vet[]={1,2,3,4,5};//vetor como a jogada de sequencia baixa deve ser
+            for(i=0; i<5; i++){
                 if(this.dados[i]!=vet[i]){
                     return false;
                 }
@@ -263,8 +243,7 @@ public class JogoGeneral {
         }
         else if(njogada==13){//jogada aleatória
             if(jogadas[11]!=-1){
-                System.out.println("Jodada já 
-                utilizada.");
+                System.out.println("Jogada ja usada");
                 return false;
             }
             else {
@@ -276,10 +255,13 @@ public class JogoGeneral {
     }
 
     public int pontuarJogada(int njogada) {
-        if (validarJogada(njogada)) { // se a jogada for validada
+        // if () { // se a jogada for validada
             int i = 0;
             int cont = 0;
-            if (njogada == 1) { //dá pra juntar para otimizar colocando no mesmo if jogadas 1 2 3 4 5 6 e aleatoria
+            if (njogada == 1 || njogada==2 || njogada==4 || njogada==5 || njogada==6 || njogada==13) { //dá pra juntar no mesmo if jogadas 1 2 3 4 5 6 e aleatoria pq todos os resultados delas são as somas
+                if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
+                    return 0;
+                }
                 do {
                     if (dados[i].getSideUp() == 1) {
                         cont += dados[i].getSideUp();
@@ -289,58 +271,10 @@ public class JogoGeneral {
 
                 return cont;
             } 
-            else if (njogada == 2) {
-                do {
-                    if (dados[i].getSideUp() == 2) {
-                        cont += dados[i].getSideUp();
-                    }
-
-                } while (i != 5);
-
-                return cont;
-
-            } 
-            else if (njogada == 3) {
-                do {
-                    if (dados[i].getSideUp() == 3) {
-                        cont += dados[i].getSideUp();
-                    }
-
-                } while (i != 5);
-
-                return cont;
-            } 
-            else if (njogada == 4) {
-                do {
-                    if (dados[i].getSideUp() == 4) {
-                        cont += dados[i].getSideUp();
-                    }
-
-                } while (i != 5);
-
-                return cont;
-            } 
-            else if (njogada == 5) {
-                do {
-                    if (dados[i].getSideUp() == 5) {
-                        cont += dados[i].getSideUp();
-                    }
-
-                } while (i != 5);
-
-                return cont;
-            } 
-            else if (njogada == 6) {
-                do {
-                    if (dados[i].getSideUp() == 6) {
-                        cont += dados[i].getSideUp();
-                    }
-
-                } while (i != 5);
-
-                return cont;
-            }
             else if (njogada == 7) { // trinca
+                if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
+                    return 0;
+                }
                 do {
                     cont += dados[i].getSideUp();
                     i++;
@@ -349,6 +283,9 @@ public class JogoGeneral {
                 return cont;
             } 
             else if (njogada == 8) {// quarta
+                if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
+                    return 0;
+                }
                 do {
                     cont += dados[i].getSideUp();
                     i++;
@@ -356,28 +293,31 @@ public class JogoGeneral {
 
                 return cont;
             } 
-            else if (njogada == 9) {
-                i = 25;
-                return i;
+            else if (njogada == 9) {// full hand
+                if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
+                    return 0;
+                }
+                return 25;
             } 
-            else if (njogada == 10) {
+            else if (njogada == 10) {//sequencia alta
+                if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
+                    return 0;
+                }
                 return 30;
             } 
-            else if (njogada == 11) {
+            else if (njogada == 11) {//sequencia baixa
+                if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
+                    return 0;
+                }
                 return 40;
             } 
-            else if (njogada == 12) {
+            else if (njogada == 12) { //general
+                if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
+                    return 0;
+                }
                 return 50;
             } 
-            else if (njogada == 13) {
-                do {
-                    cont += dados[i].getSideUp();
-                    i++;
-                } while (i != 5);
-
-                return cont;
-            }
-        }
+        
     }
 
     public Boolean (int x){ // recebe a quantidade que deve ser repetido (por ex da quadra x=4)

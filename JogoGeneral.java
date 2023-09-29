@@ -135,8 +135,34 @@ public class JogoGeneral {
 
         }
         else if(njogada==9){//FULL HOUSE
-            
+            if (jogadas[8] != -1) { // Verifica se a jogada já foi usada
+                System.out.println("Jogada já utilizada.");
+                return false;
+            }
 
+            int[] vet={0,0,0,0,0,0};//vetor para representar a quantidade que cada face do dado saiu
+
+            for(i=0; i<5; i++){
+                vet[this.dados[i].getSideUp()-1] += 1; //pega o valor da face e coloca ela na "casa" correspondente do vetor vet[0]=face 1
+            }
+
+            boolean trinca=false;//identificadores de trinca e dula
+            boolean dupla=false;//pra ser full house tem que ter uma dupla e uma trinca
+            for(i=0; i<6; i++){
+                if(vet[i]==2){
+                    dupla=true;
+                }
+                if(vet[i]==3){
+                    trinca=true;
+                }
+            }
+
+            if(trinca==true && dupla==true){
+                return true;
+            }
+            else{
+                return false
+            }
         }
         else if(njogada==10){//Sequencia alta
             if(jogadas[9]!=-1){
@@ -150,14 +176,13 @@ public class JogoGeneral {
                 }
             }
             return true; //se passar pelo for e o primeiro if sem problemas
-
         }
         else if(njogada==11){//Sequencia Baixa
             if(jogadas[10]!=-1){
                 System.out.println("Jodada já utilizada.");
                 return false;
               }
-            int vet[]={1,2,3,4,5};//vetor como a jogada de sequencia baixa deve ser
+            int[] vet={1,2,3,4,5};//vetor como a jogada de sequencia baixa deve ser
             for(i=0; i<5; i++){
                 if(this.dados[i]!=vet[i]){
                     return false;
@@ -278,13 +303,10 @@ public class JogoGeneral {
                         if(posicao==this.dados[i].getSideUp()){
                             cont++;
                         }
-
                     }   
-
             if (cont>=x){
                 resultado=true;
-            }
-                
+            }     
         }
         if(resultado==true){
             return true;
@@ -295,11 +317,7 @@ public class JogoGeneral {
  }
 
  public void mostrarDados (){
-    
         System.out.println(this.dados.toString());
     }
-    
-
-
 }
 

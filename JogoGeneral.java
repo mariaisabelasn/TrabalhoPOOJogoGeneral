@@ -24,9 +24,9 @@ public class JogoGeneral {
     public String toString() { //transforma o array de dados em uma string
         String result = "Valores obtidos: ";
     
-        for (int i = 0; i < meuArray.length; i++) {
-            result += meuArray[i];
-            if (i < meuArray.length - 1) {
+        for (int i = 0; i < dados.length; i++) {
+            result += dados[i].getSideUp() ;
+            if (i < dados.length - 1) {
                 result += "-"; // Adiciona um traço entre os elementos, exceto no último
             }
         }
@@ -34,7 +34,7 @@ public class JogoGeneral {
     }
 
     public Boolean validarJogada(int njogada) { // vai verificar se a jogada escolhida é valida retorna
-        int i = 0, cont1 = 0, cont2 = 0, cont3 = 0, cont4 = 0, cont5 = 0, cont6 = 0;
+        int i = 0;
 
         if (njogada == 1) {
             if (jogadas[0] != -1) { //verifica se dentro das jogadas feitas essa já n está preenchida
@@ -113,35 +113,7 @@ public class JogoGeneral {
                 System.out.println("Jodada já utilizada.");
                 return false;
               }
-            // do {
-            //     if (this.dados[i].getSideUp() == 1) {
-            //         cont1++;
-            //     } 
-            //     else if (this.dados[i].getSideUp() == 2) {
-            //         cont2++;
-            //     } 
-            //     else if (this.dados[i].getSideUp() == 3) {
-            //         cont3++;
-            //     } 
-            //     else if (this.dados[i].getSideUp() == 4) {
-            //         cont4++;
-            //     } 
-            //     else if (this.dados[i].getSideUp() == 5) {
-            //         cont5++;
-            //     } 
-            //     else if (this.dados[i].getSideUp() == 6) {
-            //         cont6++;
-            //     }
-
-            //     i++;
-            // } while (i != 5);
-            // if (cont1 == 3 || cont2 == 3 || cont3 == 3 || cont4 == 3 || cont5 == 3 || cont6 == 3) { // é trinca
-            //     return true;
-            // } 
-            // else {
-            //     return false;
-            // }
-             if(contador(3)){
+            if(contador(3)){
                 return true;
             }
             else{
@@ -153,29 +125,7 @@ public class JogoGeneral {
                 System.out.println("Jodada já utilizada.");
                 return false;
               }
-            // do {
-            //     if (this.dados[i].getSideUp() == 1) {
-            //         cont1++;
-            //     } else if (this.dados[i].getSideUp() == 2) {
-            //         cont2++;
-            //     } else if (this.dados[i].getSideUp() == 3) {
-            //         cont3++;
-            //     } else if (this.dados[i].getSideUp() == 4) {
-            //         cont4++;
-            //     } else if (this.dados[i].getSideUp() == 5) {
-            //         cont5++;
-            //     } else if (this.dados[i].getSideUp() == 6) {
-            //         cont6++;
-            //     }
-            //     i++;
-            // } while (i != 5);
-
-            // if (cont1 == 4 || cont2 == 4 || cont3 == 4 || cont4 == 4 || cont5 == 4 || cont6 == 4) {
-            //     return true;
-            // } 
-            // else {
-            //     return false;
-            // }
+            
             if(contador(4)){
                 return true;
             }
@@ -220,19 +170,7 @@ public class JogoGeneral {
                 System.out.println("Jodada já utilizada.");
                 return false;
               }
-            // int indice =this.dados[0];
-            // for (int i=0; i<5; i++){
-            //     if(indice==this.dados[i].getSideUp()){
-            //         cont++;
-            //     }
-
-            // }   
-            // if(cont==5){
-            //     return true;
-            // }
-            // else{
-            //     return false;
-            // }
+            
             if(contador(5)){
                 return true;
             }
@@ -297,30 +235,38 @@ public class JogoGeneral {
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }
-                return 25;
+                i=25;
+                return i;
             } 
             else if (njogada == 10) {//sequencia alta
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }
-                return 30;
+                i=30;
+                return i;
             } 
             else if (njogada == 11) {//sequencia baixa
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }
-                return 40;
+                i=40;
+                return i;
             } 
             else if (njogada == 12) { //general
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }
-                return 50;
+                i=50;
+                return i;
             } 
+            else{
+                System.out.println("Essa jogada não exite");
+                return 0;
+            }
         
     }
 
-    public Boolean (int x){ // recebe a quantidade que deve ser repetido (por ex da quadra x=4)
+    public Boolean contador (int x){ // recebe a quantidade que deve ser repetido (por ex da quadra x=4)
         boolean resultado = false;
         int posicao;
 
@@ -349,8 +295,11 @@ public class JogoGeneral {
  }
 
  public void mostrarDados (){
-    System.out.println(this.dados.toString());
- }
+    
+        System.out.println(this.dados.toString());
+    }
+    
+
 
 }
 

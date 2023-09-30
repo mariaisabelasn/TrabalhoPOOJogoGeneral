@@ -1,4 +1,3 @@
-package JogoGeneral;
 
 import java.util.Arrays;
 
@@ -171,7 +170,7 @@ public class JogoGeneral {
               }
             int vet[]={2,3,4,5,6};//vetor como a jogada de sequencia alta deve ser
             for(i=0; i<5; i++){
-                if(this.dados[i]!=vet[i]){
+                if(this.dados[i].getSideUp()!=vet[i]){
                     return false;
                 }
             }
@@ -184,7 +183,7 @@ public class JogoGeneral {
               }
             int[] vet={1,2,3,4,5};//vetor como a jogada de sequencia baixa deve ser
             for(i=0; i<5; i++){
-                if(this.dados[i]!=vet[i]){
+                if(this.dados[i].getSideUp()!=vet[i]){
                     return false;
                 }
             }
@@ -214,6 +213,7 @@ public class JogoGeneral {
             }
 
         }
+        return false;
 
     }
 
@@ -288,13 +288,13 @@ public class JogoGeneral {
 
     public Boolean contador (int x){ // recebe a quantidade que deve ser repetido (por ex da quadra x=4)
         boolean resultado = false;
-        int posicao;
+        int posicao, cont=0;
 
         for (int j=0; j<5; j++){
             cont=0;
             posicao=this.dados[j].getSideUp();
 
-                    for (i=0; i<5; i++){
+                    for (int i=0; i<5; i++){
                         if(posicao==this.dados[i].getSideUp()){
                             cont++;
                         }

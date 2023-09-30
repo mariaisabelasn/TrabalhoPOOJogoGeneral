@@ -1,4 +1,4 @@
-package JogoGeneral;
+
 
 public class Jogador {
     private String nome = new String();
@@ -26,15 +26,15 @@ public class Jogador {
     //     return(this.nome);
     // }
 
-    public escolherJogada(){
-        if(getTipoJogador()=="H"){
+    // public escolherJogada(){
+    //     if(getTipoJogador()=="H"){
 
-        }
-    }
+    //     }
+    // }
 
-    public mostrarJogadasExecutadas(){
+    // public mostrarJogadasExecutadas(){
 
-    }
+    // }
 
 
 

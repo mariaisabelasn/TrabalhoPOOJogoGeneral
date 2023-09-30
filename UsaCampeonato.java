@@ -27,12 +27,13 @@ public class Campeonato {
 
             switch( opcao ){
                 case "a":
-                    
+                    incluirjogador();
+                    break;
                 case "b":
-                    System.out.println ("Ola POO");
+                    removerJogador();
                     break;
                 case "c":
-                    System.out.println ("Saindo");
+                    iniciarCampeonato();
                     break;
                 case "d":
                     System.out.println ("Saindo");

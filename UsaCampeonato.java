@@ -1,4 +1,4 @@
-package JogoGeneralTrabalho;
+package JogoGeneral;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileOutputStream;

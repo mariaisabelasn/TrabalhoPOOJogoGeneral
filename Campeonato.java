@@ -50,6 +50,27 @@ public class Campeonato {
          System.out.println("Jogador(a) inexistente");
         
     }
+
+    public void iniciarCampeonato(){
+        for(int j=0; j<13; j++){
+            for(i=0; i<contJogadores;i++){
+                System.out.println("Rolando dados para"+players[i].getNome());
+                System.out.print("Valores obtidos: ");//imprime sem pular a linha pros dados ficarem do lado
+                rolarDados();
+                System.out.println(+ mostrarDados());
+
+                System.out.println("Para qual jogada deseja marcar: [1-13]"+players[i].getNome()+"?");
+
+                escolherJogada();
+
+                System.out.println("1\t2\t3\t4\t5\t6\t7(T)\t8(Q)\t9(F)\t10(S+)\t11(S-)\t12(G)\t13(X)");
+
+                mostrarJogadasExecutadas();
+        
+
+            }
+        }
+    }
        
     
  }

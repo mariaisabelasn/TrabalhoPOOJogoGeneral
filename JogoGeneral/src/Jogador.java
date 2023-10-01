@@ -3,7 +3,7 @@
 public class Jogador {
     private String nome = new String();
     private String tipoJogador = new String();
-    private JogoGeneral jogoGeneral = new JogoGeneral();
+    private JogoGeneral = new JogoGeneral();
 
     public Jogador (String nome, String tipoJogador){
         this.nome = nome;

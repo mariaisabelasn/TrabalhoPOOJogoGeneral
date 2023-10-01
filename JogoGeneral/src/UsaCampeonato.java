@@ -19,6 +19,7 @@ public class UsaCampeonato {
             System.out.println ("(e) Gravar os dados do campeonato em arquivo");
             System.out.println ("(f) Ler os dados do campeonato em arquivo");
             System.out.println ("(g) Sair da aplicação");
+            System.out.println("Entre com uma opção do menu: ");
             opcao = teclado.nextLine( );
 
             switch(opcao){

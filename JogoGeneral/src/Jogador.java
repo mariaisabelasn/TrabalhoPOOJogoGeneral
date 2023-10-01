@@ -1,5 +1,4 @@
 
-
 import java.util.Scanner;
 
 public class Jogador {
@@ -25,7 +24,7 @@ public class Jogador {
     }
 
     public int getJogoGeneral(int i){ 	// Função para pegar as jogadas da ficha dos respectivos jogadores.
-        return this.jogoGeneral.getJogadas(i);
+        return this.jogoGeneral.getJogadas(i); //MACRI: GETJOGADAS NÃO EXISTE, E NÃO ENTENDI O PQ DELE AINDA
     }
     // public void jogarDados(){
     //     .roll();
@@ -40,13 +39,14 @@ public class Jogador {
         if(getTipoJogador()=="H"){ //Se o jogador for humano ele escolhe a jogada que quer fazer
             do{
                 opcao = teclado.nextInt();
-                if(jogoGeneral.validarJogada(opcao)){ // se a jogada escolhida estiver disponível então será marcada e excutada
+                if(jogoGeneral.validarJogada(opcao)){ // se a jogada escolhida estiver disponível então será marcada e excutada (MACRI se quer marcar e executar tem que ser o PontuarJogada, ele vai ver a validade e já marcar se n for valido zera)
                     this.jogoGeneral.getJogadas[opcao] = 1;
                 }
                 else{
                     System.out.println("Jogada indisponível, tente outra");
                 }
-            }while(!jogoGeneral.validarJogada(opcao));
+            }while(!jogoGeneral.validarJogada(opcao));//Se um determinado resultado n˜ao cumprir os requisitos para a jogada escolhida, o jogador zera a respectiva jogada. (Até aqui tá no pontuar MACRI) E ainda, se um determinado resultado n˜ao puder ser classificado como nenhuma das jogadas ainda restantes para aquele jogador, ele dever´a escolher qual das jogadas restantes ser´a descartada, marcando 0 (zero) para a jogada correspondente.(ver isso, caho que á simplesmente: se ele for escolher e nada se encaixar, escolher uma qualquer e ela vai ser zerada nos requisitos)
+            
 
         }
         else{   // Se for do tipo máquina irá escolher a melhor jogada

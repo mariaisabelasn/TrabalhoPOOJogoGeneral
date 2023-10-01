@@ -1,10 +1,5 @@
 
 import java.util.Scanner;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
 
 public class UsaCampeonato {
        
@@ -40,10 +35,10 @@ public class UsaCampeonato {
                     System.out.println ("Saindo");
                     break;
                 case "e":
-                    System.out.println ("Saindo");
+                    campeonato.gravarEmArquivo();
                     break;
                 case "f":
-                    System.out.println ("Saindo");
+                    campeonato.lerDoArquivo();
                     break;
                 case "g":
                     System.out.println ("Saindo");
@@ -53,7 +48,7 @@ public class UsaCampeonato {
                     System.out.println ("Opcao invalida. Tente novamente");
             }
         }while(saida==false);
-
+        teclado.close();
     }
  }
 

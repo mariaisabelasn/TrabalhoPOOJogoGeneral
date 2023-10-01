@@ -21,6 +21,10 @@ public class JogoGeneral {
         }
     }
 
+    public int getJogadas(int i) { // retornar a jogada na posição i
+		return this.jogadas[i];
+	}
+
     public String toString() { //transforma o array de dados em uma string
         String result = "Valores obtidos: ";
     

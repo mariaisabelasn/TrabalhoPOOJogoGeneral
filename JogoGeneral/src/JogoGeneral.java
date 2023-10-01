@@ -20,6 +20,10 @@ public class JogoGeneral {
         }
     }
 
+    public int getJogadas(int i){//pega as jogadas já feitas do vetor jogadas
+        return this.jogadas[i];
+    }
+
     public String toString() { //transforma o array de dados em uma string
         String result = "Valores obtidos: ";
     

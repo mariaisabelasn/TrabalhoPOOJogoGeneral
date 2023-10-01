@@ -35,16 +35,16 @@ public class Campeonato {
                     iniciarCampeonato();
                     break;
                 case "d":
-                    System.out.println ("Saindo");
+                    mostrarCartela();
                     break;
                 case "e":
-                    System.out.println ("Saindo");
+                    gravarEmArquivo();
                     break;
                 case "f":
-                    System.out.println ("Saindo");
+                    lerDoArquivo();
                     break;
                 case "g":
-                    System.out.println ("Saindo");
+                    System.out.println ("Saindo...");
                     break;
                 default :
                     System.out.println ("Opcao invalida. Tente novamente");

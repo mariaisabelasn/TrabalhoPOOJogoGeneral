@@ -6,7 +6,7 @@ import java.io.ObjectOutputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
-public class Campeonato {
+public class UsaCampeonato {
        
     public static void main(String[] args){
 

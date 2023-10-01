@@ -1,4 +1,4 @@
-package JogoGeneralTrabalho;
+
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -9,48 +9,52 @@ import java.io.ObjectInputStream;
 public class UsaCampeonato {
        
     public static void main(String[] args){
-
+        Campeonato campeonato=new Campeonato();
         Scanner teclado = new Scanner (System.in);
-        int opcao = 0;
+        String opcao;
+        boolean saida=false;
+        
 
         do{
             System.out.println ("..:: Menu interativo ::..");
             System.out.println ("(a) Para incluir um jogador ");
             System.out.println ("(b) Para excluir um jogador (pelo nome)" );
             System.out.println ("(c) Executar rodada");
-            System.out.print ("(d) Mostrar a cartela de resultados da última jogada realizada]");
-            System.out.print ("(e) Gravar os dados do campeonato em arquivo");
-            System.out.print ("(f) Ler os dados do campeonato em arquivo");
-            System.out.print ("(g) Sair da aplicação");
-            opcao = teclado.nextInt( );
+            System.out.println ("(d) Mostrar a cartela de resulatdos [da última jogada realizada]");
+            System.out.println ("(e) Gravar os dados do campeonato em arquivo");
+            System.out.println ("(f) Ler os dados do campeonato em arquivo");
+            System.out.println ("(g) Sair da aplicação");
+            opcao = teclado.nextLine( );
 
-            switch( opcao ){
+            switch(opcao){
                 case "a":
-                    incluirjogador();
+                    campeonato.incluirjogador();
                     break;
                 case "b":
-                    removerJogador();
+                    campeonato.removerJogador();
                     break;
                 case "c":
-                    iniciarCampeonato();
+                    campeonato.iniciarCampeonato();
                     break;
                 case "d":
-                    mostrarCartela();
+                    System.out.println ("Saindo");
                     break;
                 case "e":
-                    gravarEmArquivo();
+                    System.out.println ("Saindo");
                     break;
                 case "f":
-                    lerDoArquivo();
+                    System.out.println ("Saindo");
                     break;
                 case "g":
-                    System.out.println ("Saindo...");
+                    System.out.println ("Saindo");
+                    saida=true;
                     break;
                 default :
                     System.out.println ("Opcao invalida. Tente novamente");
             }
-        }while(opcao != "g");
+        }while(saida==false);
 
     }
  }
 
+ 

@@ -1,11 +1,11 @@
-package JogoGeneralTrabalho;
+
 
 import java.util.Scanner;
 
 public class Jogador {
     private String nome = new String();
     private String tipoJogador = new String();
-    private JogoGeneral jogoGeneral;
+    private JogoGeneral= jogoGeneral;
         
     Scanner teclado = new Scanner (System.in);
 
@@ -72,3 +72,4 @@ public class Jogador {
     }
 
 }
+

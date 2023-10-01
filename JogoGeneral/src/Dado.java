@@ -1,4 +1,4 @@
-package JogoGeneralTrabalho;
+
 
 import java.util.Random;
 

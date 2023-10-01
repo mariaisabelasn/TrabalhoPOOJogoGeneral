@@ -19,7 +19,7 @@ public class Campeonato {
             System.out.println ("(a) Para incluir um jogador ");
             System.out.println ("(b) Para excluir um jogador (pelo nome)" );
             System.out.println ("(c) Executar rodada");
-            System.out.print ("(d) Mostrar a cartela de resulatdos [da última jogada realizada]");
+            System.out.print ("(d) Mostrar a cartela de resultados da última jogada realizada]");
             System.out.print ("(e) Gravar os dados do campeonato em arquivo");
             System.out.print ("(f) Ler os dados do campeonato em arquivo");
             System.out.print ("(g) Sair da aplicação");
@@ -55,4 +55,3 @@ public class Campeonato {
     }
  }
 
- 

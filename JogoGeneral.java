@@ -1,4 +1,4 @@
-package JogoGeneralTrabalho;
+﻿package JogoGeneralTrabalho;
 
 import java.util.Arrays;
 

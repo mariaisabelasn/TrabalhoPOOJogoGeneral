@@ -7,7 +7,6 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
 public class Campeonato {
-    // private Jogador[] players = new Jogador[5]; // vetor dos jogadores presentes no campeonato TIRAR PQ TÁ EM FUNÇÕES
        
     public static void main(String[] args){
 
@@ -27,13 +26,13 @@ public class Campeonato {
 
             switch( opcao ){
                 case "a":
-                    System.out.println ("Ola mundo");
+                    incluirjogador();
                     break;
                 case "b":
-                    System.out.println ("Ola POO");
+                    removerJogador();
                     break;
                 case "c":
-                    System.out.println ("Saindo");
+                    iniciarCampeonato();
                     break;
                 case "d":
                     System.out.println ("Saindo");

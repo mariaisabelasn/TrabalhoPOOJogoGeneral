@@ -3,7 +3,7 @@ package JogoGeneralTrabalho;
 public class Jogador {
     private String nome = new String();
     private String tipoJogador = new String();
-    private JogoGeneral jogoG = new JogoGeneral();
+    private JogoGeneral jogoGeneral = new JogoGeneral();
 
     public Jogador (String nome, String tipoJogador){
         this.nome = nome;

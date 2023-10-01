@@ -36,11 +36,6 @@ public class Jogador {
     // }
 
     public escolherJogada(){
-        System.out.println("Para qual jogada deseja marcar: [1-13] %s"+this.nome);
-        System.out.println("1\t" + "2\t" + "3\t" + "4\t" + "5\t" + "6\t" + "7(T)\t" + "8(Q)\t" + 
-						   "9(F)\t" + "10(S+)\t" + "11(S-)\t" + "12(G)\t" + "13(X)\t");
-        mostrarJogadasExecutadas();
-
         int opcao = 0;
         if(getTipoJogador()=="H"){ //Se o jogador for humano ele escolhe a jogada que quer fazer
             do{

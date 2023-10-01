@@ -71,6 +71,18 @@ public class Campeonato {
             }
         }
     }
+
+    public void mostrarCartela(){
+
+    }
+
+    public void gravarEmArquivo(){
+        
+    }
+
+    public void lerDoArquivo(){
+        
+    }
        
     
  }

@@ -67,7 +67,7 @@ public class Jogador {
         // Jogadas já feitas
 		for (int i = 0 ; i < 13 ; i++) { 
 			if(this.jogoGeneral.getJogadas(i) != -1) {
-				System.out.print("X\t");
+				System.out.print("X\t"); //MACRI: TEM QUE PRINTAR O VALOR NÂO?
 			} else {
 				System.out.print("-\t");
 			}

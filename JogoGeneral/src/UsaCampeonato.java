@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class UsaCampeonato {
        
     public static void main(String[] args){
-        Campeonato campeonato=new Campeonato();
+        private Campeonato campeonato=new Campeonato();
         Scanner teclado = new Scanner (System.in);
-        String opcao;
+        private String opcao;
         boolean saida=false;
         
 

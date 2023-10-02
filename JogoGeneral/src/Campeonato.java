@@ -95,7 +95,21 @@ public class Campeonato {
         System.out.print("\n");
        }
 
+       System.out.println("-------------------------");
+       System.out.println("Total\t");
 
+
+
+
+    }
+    public int somaJogadas(int jogante){
+            int=soma;
+            for(int j=0; j<13; j++){//pra percorrer todos od jogos de cada jogador
+                soma=players[jogante].getJogoGeneral(j);
+
+            }
+
+        
     }
 
     public void gravarEmArquivo() {

@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Jogador {
     private String nome = new String();
     private String tipoJogador = new String();
-    private JogoGeneral= jogoGeneral;
+    private JogoGeneral jogoGeneral = new JogoGeneral();
     private int[] vet= new int[13];
         
     Scanner teclado = new Scanner (System.in);

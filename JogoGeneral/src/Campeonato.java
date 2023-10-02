@@ -55,7 +55,7 @@ public class Campeonato {
 
     }
 
-    public void iniciarCampeonato() {
+    public void iniciarCampeonato() {//inicia ou reinicia um campeonato
         for (int j = 0; j < 13; j++) {
             for (int i = 0; i < contJogadores; i++) {
                 System.out.println("Rolando dados para" + players[i].getNome());
@@ -129,7 +129,7 @@ public class Campeonato {
             fin.close();
 
             for (Jogador p : players) {
-                p.imprimirDados();
+                p.imprimirDados();//Ainda falta essa função aqui
             }
         } catch (Exception ex) {
             System.err.println("erro: " + ex.toString());

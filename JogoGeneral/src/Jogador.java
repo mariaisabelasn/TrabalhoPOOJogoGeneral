@@ -52,13 +52,28 @@ public class Jogador {
         }
         else{   // Se for do tipo máquina irá escolher a melhor jogada
 //tentar achar um código na net para melhores jogadas/ jogadas inteligentes
-            do{
-                
+            int melhorPontuacao = 0;
+            int melhorJogada=0;
+
+            do{//basicamente vai ver para aquela rodada qual vai ser a jogada com maior pontuação
+                int pontuacao = pontuarJogada(opcao);
+
+                if(pontuacao>melhorPontuacao){//serve p achar a melhor jogada mas vai acabar preenchendo todas as outras do vetor jogadas tbm
+                    melhorPontuacao=pontuacao;
+                    melhorJogada=opcao;
+                }
+
+                opcao++;
+            }while(opcao<13);
+
+            for (int i=0; i<13; i++){
+                if(this.jogoGeneral.getJogadas(i)!= melhorPontuacao){
+                    this.jogoGeneral.getJogadas(i) = -1; //resolve o problema de preenchimento de outras jogadas
+                }
             }
+
+            return melhorJogada;
         }
-
-        
-
 
     }
 

@@ -7,15 +7,15 @@ import java.io.ObjectInputStream;
 
 public class Campeonato {
     private Jogador[] players = new Jogador[5]; // vetor dos jogadores do campeonato
-    int contJogadores = 0;
-    Scanner teclado = new Scanner(System.in);// scanf do java
-    String nome, biotipo;
+    private int contJogadores = 0;
+    private Scanner teclado = new Scanner(System.in);// scanf do java
+    JogoGeneral jogo = new JogoGeneral();
+    private String nome, biotipo;
 
     public Campeonato() {
         for (int i = 0; i < players.length; i++) {
             players[i] = null; // Define cada elemento como nulo
         }
-
     }
 
     public void incluirjogador() {
@@ -56,7 +56,6 @@ public class Campeonato {
     }
 
     public void iniciarCampeonato() {
-        JogoGeneral jogo = new JogoGeneral();
         for (int j = 0; j < 13; j++) {
             for (int i = 0; i < contJogadores; i++) {
                 System.out.println("Rolando dados para" + players[i].getNome());
@@ -77,6 +76,25 @@ public class Campeonato {
     }
 
     public void mostrarCartela() {
+        System.out.println("-- Cartela de Resultados --");
+        System.out.print("Jogada\t");
+
+        for(int i=0; i<contJogadores; i++){
+            System.out.print(players[i].getNome()+"("+players[i].getTipoJogador()+")\t");
+        } // vai imprimir o nome e o tipo de todos os players lado a lado
+        System.out.print("\n"); //pula linha quando os nomes terminam
+
+        String[] type={"1", "2", "3", "4", "5", "6", "7(T)", "8(Q)", "9(F)", "10(S+)", "11(S-)", "12(G)", "13(X)"};//string com os "nomes" das jogadas
+        
+       for(int j=0; j<13;j++){
+        System.out.print(type[j]+"\t");//imprime os nomes das jogadas
+        
+        for(int k=0; k<contJogadores; k++){
+            System.out.print(players[k].getJogoGeneral(k)+"\t"); // pega as pontuações jogadas de uma "ficha" dos jogadores que é o jogogeneral
+        }
+        System.out.print("\n");
+       }
+
 
     }
 

@@ -23,9 +23,10 @@ public class Jogador {
         return this.tipoJogador;
     }
 
-    public int getJogoGeneral(int i){ 	// Função para pegar as jogadas da ficha dos respectivos jogadores.
-        return this.jogoGeneral.getJogadas(i); //MACRI: GETJOGADAS NÃO EXISTE, E NÃO ENTENDI O PQ DELE AINDA
+    public int getJogoGeneral(int i){ 	// Função para pegar as jogadas da "ficha" dos respectivos jogadores.
+        return this.jogoGeneral.getJogadas(i);
     }
+    //
     // public void jogarDados(){
     //     .roll();
     // }
@@ -51,6 +52,9 @@ public class Jogador {
         }
         else{   // Se for do tipo máquina irá escolher a melhor jogada
 //tentar achar um código na net para melhores jogadas/ jogadas inteligentes
+            do{
+                
+            }
         }
 
         
@@ -73,3 +77,4 @@ public class Jogador {
 
 }
 
+//NOTA: fazer uma função imprimirDados que imprime nome tipo e jogadas do jogador 

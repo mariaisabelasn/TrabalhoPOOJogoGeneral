@@ -33,7 +33,7 @@ public class UsaCampeonato {
                     campeonato.iniciarCampeonato();
                     break;
                 case "d":
-                    System.out.println ("Saindo");
+                    campeonato.mostrarCartela();
                     break;
                 case "e":
                     campeonato.gravarEmArquivo();

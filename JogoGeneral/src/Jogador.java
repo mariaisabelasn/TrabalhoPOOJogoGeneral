@@ -5,6 +5,7 @@ public class Jogador {
     private String nome = new String();
     private String tipoJogador = new String();
     private JogoGeneral= jogoGeneral;
+    private int[] vet= new int[13];
         
     Scanner teclado = new Scanner (System.in);
 
@@ -54,7 +55,7 @@ public class Jogador {
 //tentar achar um código na net para melhores jogadas/ jogadas inteligentes
             int melhorPontuacao = 0;
             int melhorJogada=0;
-
+    
             do{//basicamente vai ver para aquela rodada qual vai ser a jogada com maior pontuação
                 if(this.jogoGeneral.getJogadas[opcao]==-1){//se já não for ocupada a jogada
                     int pontuacao = pontuarJogada(opcao);
@@ -62,15 +63,20 @@ public class Jogador {
                     if(pontuacao>melhorPontuacao){//serve p achar a melhor jogada mas vai acabar preenchendo todas as outras do vetor jogadas tbm
                         melhorPontuacao=pontuacao;
                         melhorJogada=opcao;
+
                     }
+
               
+                }
+                else{
+                    vet[opcao] = 1;//se a jogada já tiver sido usada anteriormente é marcada como 1;
                 }
 
                 opcao++;
             }while(opcao<13);
 
             for (int i=0; i<13; i++){
-                if(this.jogoGeneral.getJogadas(i)!= melhorPontuacao){
+                if(this.jogoGeneral.getJogadas(i)!= melhorPontuacao && vet[i]!=1){
                     this.jogoGeneral.getJogadas(i) = -1; //resolve o problema de preenchimento de outras jogadas
                 }
             }

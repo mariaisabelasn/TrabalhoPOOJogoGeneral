@@ -96,20 +96,20 @@ public class Campeonato {
        }
 
        System.out.println("-------------------------");
-       System.out.println("Total\t");
+       System.out.print("Total\t");
 
-
-
+       for(int k=0; k<contJogadores; k++){
+            System.out.print(somaJogadas(k)+"\t");
+        }
+        System.out.print("\n");
 
     }
     public int somaJogadas(int jogante){
-            int=soma;
+            int soma=0;
             for(int j=0; j<13; j++){//pra percorrer todos od jogos de cada jogador
-                soma=players[jogante].getJogoGeneral(j);
-
-            }
-
-        
+                soma+=players[jogante].getJogoGeneral(j);
+            }  
+            return soma; 
     }
 
     public void gravarEmArquivo() {

@@ -56,11 +56,14 @@ public class Jogador {
             int melhorJogada=0;
 
             do{//basicamente vai ver para aquela rodada qual vai ser a jogada com maior pontuação
-                int pontuacao = pontuarJogada(opcao);
+                if(this.jogoGeneral.getJogadas[opcao]==-1){//se já não for ocupada a jogada
+                    int pontuacao = pontuarJogada(opcao);
 
-                if(pontuacao>melhorPontuacao){//serve p achar a melhor jogada mas vai acabar preenchendo todas as outras do vetor jogadas tbm
-                    melhorPontuacao=pontuacao;
-                    melhorJogada=opcao;
+                    if(pontuacao>melhorPontuacao){//serve p achar a melhor jogada mas vai acabar preenchendo todas as outras do vetor jogadas tbm
+                        melhorPontuacao=pontuacao;
+                        melhorJogada=opcao;
+                    }
+              
                 }
 
                 opcao++;

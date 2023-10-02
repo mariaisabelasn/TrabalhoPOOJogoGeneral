@@ -34,7 +34,7 @@ public class Campeonato {
             System.out.println("Não podem ser incluídos novos jogadores(as)");
         }
 
-    }
+    } 
 
     public void removerJogador() {
         System.out.println("Digite o nome do jogador:");

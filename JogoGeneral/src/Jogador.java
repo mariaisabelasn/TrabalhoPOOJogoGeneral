@@ -13,7 +13,6 @@ public class Jogador {
     public Jogador (String nome, String tipoJogador){
         this.nome = nome;
         this.tipoJogador = tipoJogador;
-        this.jogoGeneral = new JogoGeneral();
     }
 
     public String getNome(){

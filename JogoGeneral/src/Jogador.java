@@ -27,22 +27,14 @@ public class Jogador {
     public int getJogoGeneral(int i){ 	// Função para pegar as jogadas da "ficha" dos respectivos jogadores.
         return this.jogoGeneral.getJogadas(i);
     }
-    //
-    // public void jogarDados(){
-    //     .roll();
-    // }
 
-    // public String toString(){
-    //     return(this.nome);
-    // }
-
-    public escolherJogada(){
+    public int escolherJogada(){
         int opcao = 0;
         if(getTipoJogador()=="H"){ //Se o jogador for humano ele escolhe a jogada que quer fazer
             do{
                 opcao = teclado.nextInt();
                 if(jogoGeneral.validarJogada(opcao)){ // se a jogada escolhida estiver disponível então será marcada e excutada (MACRI se quer marcar e executar tem que ser o PontuarJogada, ele vai ver a validade e já marcar se n for valido zera)
-                    this.jogoGeneral.getJogadas[opcao] = 1;
+                    this.jogoGeneral.setJogadas(opcao, 1);
                 }
                 else{
                     System.out.println("Jogada indisponível, tente outra");
@@ -57,8 +49,8 @@ public class Jogador {
             int melhorJogada=0;
     
             do{//basicamente vai ver para aquela rodada qual vai ser a jogada com maior pontuação
-                if(this.jogoGeneral.getJogadas[opcao]==-1){//se já não for ocupada a jogada
-                    int pontuacao = pontuarJogada(opcao);
+                if(this.jogoGeneral.getJogadas(opcao)==-1){//se já não for ocupada a jogada
+                    int pontuacao = jogoGeneral.getJogadas(opcao);
 
                     if(pontuacao>melhorPontuacao){//serve p achar a melhor jogada mas vai acabar preenchendo todas as outras do vetor jogadas tbm
                         melhorPontuacao=pontuacao;
@@ -77,26 +69,32 @@ public class Jogador {
 
             for (int i=0; i<13; i++){
                 if(this.jogoGeneral.getJogadas(i)!= melhorPontuacao && vet[i]!=1){
-                    this.jogoGeneral.getJogadas(i) = -1; //resolve o problema de preenchimento de outras jogadas
+                    this.jogoGeneral.setJogadas(i, -1); //resolve o problema de preenchimento de outras jogadas
                 }
             }
 
             return melhorJogada;
         }
 
+        return 0;
+
     }
 
 
-    public mostrarJogadasExecutadas(){
+    public void mostrarJogadasExecutadas(){
         // Jogadas já feitas
 		for (int i = 0 ; i < 13 ; i++) { 
 			if(this.jogoGeneral.getJogadas(i) != -1) {
-				System.out.print("X\t"); //MACRI: TEM QUE PRINTAR O VALOR NÂO?
+				System.out.printf("%d", jogoGeneral.getJogadas(i)); 
 			} else {
 				System.out.print("-\t");
 			}
 		}
 		System.out.println("");
+    }
+
+    public void imprimirDados(){
+        System.out.println(this.nome.toString(), this.tipoJogador.toString(), this.jogoGeneral.getJogadas);
     }
 
 }

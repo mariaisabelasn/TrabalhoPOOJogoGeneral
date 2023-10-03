@@ -18,6 +18,18 @@ public class Dado {
         Random x = new Random();
         this.sideUp = x.nextInt(6) + 1;
     }
+
+    public String toString() { //transforma o array de dados em uma string
+        String result = "Valores obtidos: ";
+    
+        for (int i = 0; i < dados.length; i++) {
+            result += dados[i].getSideUp() ;
+            if (i < dados.length - 1) {
+                result += "-"; // Adiciona um traço entre os elementos, exceto no último
+            }
+        }
+        return result;
+    }
     
     
 }

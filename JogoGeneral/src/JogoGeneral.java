@@ -25,7 +25,7 @@ public class JogoGeneral {
     }
 
     public void setJogadas(int i, int x) {
-        this.jogadas[i-1] = x;
+        this.jogadas[i] = x;
     }
 
     public String toString() { //transforma o array de dados em uma string

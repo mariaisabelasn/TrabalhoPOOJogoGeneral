@@ -11,7 +11,7 @@ public class UsaCampeonato {
         
 
         do{
-            System.out.println ("..:: Menu interativo ::..");
+            System.out.println ("..:: Menu interativo :..");
             System.out.println ("(a) Para incluir um jogador ");
             System.out.println ("(b) Para excluir um jogador (pelo nome)" );
             System.out.println ("(c) Executar rodada");

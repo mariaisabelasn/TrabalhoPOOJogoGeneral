@@ -27,6 +27,18 @@ public class JogoGeneral {
     public void setJogadas(int i, int x) {
         this.jogadas[i] = x;
     }
+    
+    public String toString() { //transforma o array de dados em uma string
+        String result = "Valores obtidos: ";
+    
+        for (int i = 0; i < dados.length; i++) {
+            result += dados[i].getSideUp() ;
+            if (i < dados.length - 1) {
+                result += "-"; // Adiciona um traço entre os elementos, exceto no último
+            }
+        }
+        return result;
+    }
 
     public Boolean validarJogada(int njogada) { // vai verificar se a jogada escolhida é valida retorna
         int i = 0;

@@ -28,9 +28,10 @@ public class Jogador {
     }
 
     public int escolherJogada(){
-        int opcao = 0;
+        int opcao = 1;
         if(getTipoJogador()=="H"){ //Se o jogador for humano ele escolhe a jogada que quer fazer
             do{
+                teclado.nextLine();
                 opcao = teclado.nextInt();
                 if(jogoGeneral.validarJogada(opcao)){ // se a jogada escolhida estiver disponível então será marcada e excutada (MACRI se quer marcar e executar tem que ser o PontuarJogada, ele vai ver a validade e já marcar se n for valido zera)
                     this.jogoGeneral.setJogadas(opcao, 1);
@@ -57,7 +58,6 @@ public class Jogador {
 
                     }
 
-              
                 }
                 else{
                     vet[opcao] = 1;//se a jogada já tiver sido usada anteriormente é marcada como 1;
@@ -75,7 +75,7 @@ public class Jogador {
             return melhorJogada;
         }
 
-        return 0;
+        return 0; // caso todas as jogadas tenham sido executadas ele zera 
 
     }
 
@@ -92,10 +92,11 @@ public class Jogador {
 		System.out.println("");
     }
 
-    public void imprimirDados(){
-        System.out.println(this.nome.toString(), this.tipoJogador.toString(), this.jogoGeneral.getJogadas);
+    public void imprimirDados(){ //imprime nome tipo e jogadas do jogador 
+        System.out.println(this.nome.toString());
+        System.out.println(this.tipoJogador.toString());
+        System.out.println(this.jogoGeneral.toString());
     }
 
 }
 
-//NOTA: fazer uma função imprimirDados que imprime nome tipo e jogadas do jogador 

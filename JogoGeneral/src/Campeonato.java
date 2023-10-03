@@ -58,12 +58,12 @@ public class Campeonato {
     public void iniciarCampeonato() {//inicia ou reinicia um campeonato
         for (int j = 0; j < 13; j++) {
             for (int i = 0; i < contJogadores; i++) {
-                System.out.println("Rolando dados para" + players[i].getNome());
+                System.out.println("Rolando dados para " + players[i].getNome());
                 System.out.print("Valores obtidos: ");// imprime sem pular a linha pros dados ficarem do lado
                 jogo.rolarDados();
                 jogo.mostrarDados();
 
-                System.out.println("Para qual jogada deseja marcar: [1-13]" + players[i].getNome() + "?");
+                System.out.println("Para qual jogada deseja marcar: [1-13] " + players[i].getNome() + "?");
 
                 players[i].escolherJogada();
 

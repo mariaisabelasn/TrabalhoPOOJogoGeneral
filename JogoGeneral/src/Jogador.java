@@ -94,7 +94,9 @@ public class Jogador {
     }
 
     public void imprimirDados(){
-        System.out.println(this.nome.toString(), this.tipoJogador.toString(), this.jogoGeneral.getJogadas);
+        System.out.println(this.nome.toString());
+        System.out.println(this.tipoJogador.toString());
+        System.out.println(this.jogoGeneral.toString());
     }
 
 }

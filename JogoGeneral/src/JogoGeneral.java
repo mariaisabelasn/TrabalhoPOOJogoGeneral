@@ -1,5 +1,5 @@
 
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class JogoGeneral {
     private Dado[] dados = new Dado[5];
@@ -22,6 +22,10 @@ public class JogoGeneral {
 
     public int getJogadas(int i){//pega as jogadas já feitas do vetor jogadas
         return this.jogadas[i];
+    }
+
+    public void setJogadas(int i, int x) {
+        this.jogadas[i-1] = x;
     }
 
     public String toString() { //transforma o array de dados em uma string

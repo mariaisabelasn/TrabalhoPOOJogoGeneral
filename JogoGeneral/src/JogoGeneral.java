@@ -24,7 +24,7 @@ public class JogoGeneral {
         return this.jogadas[i];
     }
 
-    public void setJogadas(int i, int x) {
+    public void setJogadas(int i, int x) {//vai colocar a pontuação das jogadas
         this.jogadas[i] = x;
     }
     

@@ -19,7 +19,7 @@ public class Campeonato {
     }
 
     public void incluirjogador() {
-        if (contJogadores < 5 && players[contJogadores] == null) {
+        if (contJogadores < 10 && players[contJogadores] == null) {
 
             System.out.println("Nome do Jogador(a): ");
             nome = teclado.nextLine();

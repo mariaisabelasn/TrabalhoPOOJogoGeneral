@@ -86,7 +86,8 @@ public class Jogador {
 		for (int i = 0 ; i < 13 ; i++) { 
 			if(this.jogoGeneral.getJogadas(i) != -1) {
 				System.out.printf("%d", jogoGeneral.getJogadas(i)); 
-			} else {
+			} 
+            else {
 				System.out.print("-\t");
 			}
 		}

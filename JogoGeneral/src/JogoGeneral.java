@@ -227,17 +227,18 @@ public class JogoGeneral {
 //.
     public int pontuarJogada(int njogada) {
         // if () { // se a jogada for validada
-            int i = njogada-1;
+            int i = 0;
             int cont = 0;
             if (njogada == 1 || njogada==2 || njogada==3 || njogada==4 || njogada==5 || njogada==6 || njogada==13) { //dá pra juntar no mesmo if jogadas 1 2 3 4 5 6 e aleatoria pq todos os resultados delas são as somas
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }
                 do {
-                    if (dados[i].getSideUp() == 1) {
+                    if (dados[i].getSideUp() == njogada) {
                         cont += dados[i].getSideUp();
+                        System.out.println("aqui");
                     }
-
+                    i++;
                 } while (i != 5);
 
                 return cont;//retorna a pontuação 

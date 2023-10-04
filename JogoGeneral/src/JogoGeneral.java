@@ -229,7 +229,7 @@ public class JogoGeneral {
         // if () { // se a jogada for validada
             int i = njogada-1;
             int cont = 0;
-            if (njogada == 1 || njogada==2 || njogada==4 || njogada==5 || njogada==6 || njogada==13) { //dá pra juntar no mesmo if jogadas 1 2 3 4 5 6 e aleatoria pq todos os resultados delas são as somas
+            if (njogada == 1 || njogada==2 || njogada==3 || njogada==4 || njogada==5 || njogada==6 || njogada==13) { //dá pra juntar no mesmo if jogadas 1 2 3 4 5 6 e aleatoria pq todos os resultados delas são as somas
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }

@@ -43,8 +43,8 @@ public class Campeonato {
         }
         System.out.println("Digite o nome do jogador:");
         nome = teclado.nextLine();
-
-        for (int i = 0; i < 5; i++) {
+        int i=0;
+        do{
             if (nome.equals(players[i].getNome())) {
                 for (int j = i; j < contJogadores - 1; j++) {
                     players[j] = players[j - 1];// vai "puxando" os que vem depois pro lugar do exclindo e reordenando
@@ -53,9 +53,13 @@ public class Campeonato {
                                 // adicionar outro
                 break;
             }
-        }
+            else{
+                System.out.println("Jogador(a) inexistente");
+
+            }
+            i++;
+        }while(i!=contJogadores );
         players[contJogadores] = null;
-        System.out.println("Jogador(a) inexistente");
 
     }
 

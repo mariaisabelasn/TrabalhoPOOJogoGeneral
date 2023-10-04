@@ -58,7 +58,7 @@ public class Campeonato {
 
             }
             i++;
-        }while(i!=contJogadores );
+        }while(i!=contJogadores);
         players[contJogadores] = null;
 
     }

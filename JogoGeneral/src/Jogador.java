@@ -35,7 +35,7 @@ public class Jogador {
                     opcao = teclado.nextInt();
                     teclado.nextLine(); // Limpar o buffer de entrada após a leitura do inteiro
                     if (jogoGeneral.validarJogada(opcao)==true) {
-                        this.jogoGeneral.setJogadas(opcao, 1);
+                        this.jogoGeneral.getJogadas(opcao);
                     } else {
                         System.out.println("Jogada indisponível, tente outra");
                     }

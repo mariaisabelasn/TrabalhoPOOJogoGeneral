@@ -240,7 +240,7 @@ public class JogoGeneral {
 
                 } while (i != 5);
 
-                return cont;//coloca a pontuação no vetor de jogadas
+                return cont;//retorna a pontuação 
             } 
             else if (njogada == 7) { // trinca
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
@@ -251,7 +251,7 @@ public class JogoGeneral {
                     i++;
                 } while (i != 5);
 
-                return cont;//retorna a pontuação 
+                return cont; //retorna a pontuação 
             } 
             else if (njogada == 8) {// quarta
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
@@ -262,37 +262,37 @@ public class JogoGeneral {
                     i++;
                 } while (i != 5);
 
-                return cont;//coloca a pontuação no vetor de jogadas
+                return cont;//retorna a pontuação 
             } 
             else if (njogada == 9) {// full hand
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }
-                return 25;//coloca a pontuação no vetor de jogadas
+                return 25;//retorna a pontuação 
             } 
             else if (njogada == 10) {//sequencia alta
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }
-                return 30;//coloca a pontuação no vetor de jogadas
+                return 30;//retorna a pontuação 
             } 
             else if (njogada == 11) {//sequencia baixa
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }
-                return 40;//coloca a pontuação no vetor de jogadas
+                return 40;//retorna a pontuação 
             } 
             else if (njogada == 12) { //general
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }
-                return 50; //coloca a pontuação no vetor de jogadas
+                return 50; //retorna a pontuação 
             } 
             else{
                 System.out.println("Essa jogada não exite");
             }
 
-        return 0;
+        return -1; // quer dizer que ta fora do tamanho definido
         
     }
 

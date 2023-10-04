@@ -224,7 +224,7 @@ public class JogoGeneral {
         return false;
 
     }
-
+//.
     public int pontuarJogada(int njogada) {
         // if () { // se a jogada for validada
             int i = njogada-1;

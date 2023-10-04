@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 
 public class Campeonato {
-    private Jogador[] players = new Jogador[5]; // vetor dos jogadores do campeonato
+    private Jogador[] players = new Jogador[10]; // vetor dos jogadores do campeonato
     private int contJogadores = 0;
     private Scanner teclado = new Scanner(System.in);// scanf do java
     JogoGeneral jogo = new JogoGeneral();
@@ -37,6 +37,10 @@ public class Campeonato {
     } 
 
     public void removerJogador() {
+        System.out.println("Jogadores:");
+        for (int i = 0; i < contJogadores; i++) { // printar o nome dos jogadores
+            System.out.println(i+" - "+ players[i].getNome());
+        }
         System.out.println("Digite o nome do jogador:");
         nome = teclado.nextLine();
 
@@ -65,11 +69,10 @@ public class Campeonato {
 
                 System.out.println("Para qual jogada deseja marcar: [1-13] " + players[i].getNome() + "?");
 
-                players[i].escolherJogada();
-
-                System.out.println("1\t2\t3\t4\t5\t6\t7(T)\t8(Q)\t9(F)\t10(S+)\t11(S-)\t12(G)\t13(X)");
-
+                
+                System.out.println("1\t2\t3\t4\t5\t6\t7(T)\t8(Q)\t9(F)\t10(S+)\t11(S-)\t12(G)\t13(X)"); 
                 players[i].mostrarJogadasExecutadas();
+                players[i].escolherJogada();
 
             }
         }

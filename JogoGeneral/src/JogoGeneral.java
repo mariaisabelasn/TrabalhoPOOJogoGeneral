@@ -31,9 +31,9 @@ public class JogoGeneral {
     public String toString() { //transforma o array de dados em uma string
         String result = "Valores obtidos: ";
     
-        for (int i = 0; i < dados.length; i++) {
-            result += dados[i].getSideUp() ;
-            if (i < dados.length - 1) {
+        for (int i = 0; i < 5; i++) {
+            result += dados[i].toString() ;
+            if (i < 5 - 1) {
                 result += "-"; // Adiciona um traço entre os elementos, exceto no último
             }
         }
@@ -320,7 +320,10 @@ public class JogoGeneral {
  }
 
  public void mostrarDados (){
-        System.out.println(this.dados.toString());
+        for (int i = 0; i < 5; i++) {
+            System.out.print(dados[i].toString()+" ") ;
+        }    
+        System.out.print("\n");
     }
 }
 

@@ -27,7 +27,7 @@ public class Jogador {
         return this.jogoGeneral.getJogadas(i);
     }
 
-    public int escolherJogada(){
+    public void escolherJogada(){
         int opcao = 0;
         if (getTipoJogador().equals("H")) {
             do {
@@ -36,7 +36,7 @@ public class Jogador {
                     teclado.nextLine(); // Limpar o buffer de entrada após a leitura do inteiro
                     System.out.println("opcao= "+opcao);
                     if (jogoGeneral.getJogadas(opcao-1)==-1) {
-                        this.jogoGeneral.setJogadas(opcao-1, jogoGeneral.pontuarJogada(opcao));
+                        this.jogoGeneral.setJogadas(opcao-1, this.jogoGeneral.pontuarJogada(opcao));
                     } else {
                         System.out.println("Jogada indisponível, tente outra");
                     }
@@ -51,14 +51,13 @@ public class Jogador {
         else{   // Se for do tipo máquina irá escolher a melhor jogada
             int melhorPontuacao = 0;
             int melhorJogada=0;
-    
-            while(opcao<13){//basicamente vai ver para aquela rodada qual vai ser a jogada com maior pontuação
-                if(this.jogoGeneral.getJogadas(opcao-1)==-1){//se já não for ocupada a jogada
-                    int pontuacao = jogoGeneral.getJogadas(opcao-1);
+                while(opcao<13){//basicamente vai ver para aquela rodada qual vai ser a jogada com maior pontuação
+                if(this.jogoGeneral.getJogadas(opcao)==-1){//se já não for ocupada a jogada
+                    int pontuacao = jogoGeneral.getJogadas(opcao);
 
                     if(pontuacao>melhorPontuacao){//serve p achar a melhor jogada mas vai acabar preenchendo todas as outras do vetor jogadas tbm
                         melhorPontuacao=pontuacao;
-                        melhorJogada=opcao-1;
+                        melhorJogada=opcao;
 
                     }
 
@@ -76,11 +75,9 @@ public class Jogador {
                 }
             }
             this.jogoGeneral.setJogadas(melhorJogada, melhorPontuacao);//pontua para a máquina
-            return melhorJogada;//retorna a jogada feita pela maquina
+
+            System.out.println("jogada da maquina: "+melhorJogada);//retorna a jogada feita pela maquina
         }
-
-        return 0; // caso todas as jogadas tenham sido executadas ele zera 
-
     }
 
 

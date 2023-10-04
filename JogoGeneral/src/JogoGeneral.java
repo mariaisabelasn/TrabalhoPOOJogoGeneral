@@ -225,13 +225,13 @@ public class JogoGeneral {
 
     }
 
-    public void pontuarJogada(int njogada) {
+    public int pontuarJogada(int njogada) {
         // if () { // se a jogada for validada
             int i = njogada-1;
             int cont = 0;
             if (njogada == 1 || njogada==2 || njogada==4 || njogada==5 || njogada==6 || njogada==13) { //dá pra juntar no mesmo if jogadas 1 2 3 4 5 6 e aleatoria pq todos os resultados delas são as somas
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
-                    jogadas[i]= 0;
+                    return 0;
                 }
                 do {
                     if (dados[i].getSideUp() == 1) {
@@ -240,57 +240,59 @@ public class JogoGeneral {
 
                 } while (i != 5);
 
-                jogadas[i]=cont;//coloca a pontuação no vetor de jogadas
+                return cont;//coloca a pontuação no vetor de jogadas
             } 
             else if (njogada == 7) { // trinca
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
-                    jogadas[i]= 0;
+                    return 0;
                 }
                 do {
                     cont += dados[i].getSideUp();
                     i++;
                 } while (i != 5);
 
-                jogadas[i]= cont;//coloca a pontuação no vetor de jogadas
+                return cont;//retorna a pontuação 
             } 
             else if (njogada == 8) {// quarta
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
-                    jogadas[i]= 0;
+                    return 0;
                 }
                 do {
                     cont += dados[i].getSideUp();
                     i++;
                 } while (i != 5);
 
-                jogadas[i]= cont;//coloca a pontuação no vetor de jogadas
+                return cont;//coloca a pontuação no vetor de jogadas
             } 
             else if (njogada == 9) {// full hand
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
-                    jogadas[i]= 0;
+                    return 0;
                 }
-                jogadas[i]= 25;//coloca a pontuação no vetor de jogadas
+                return 25;//coloca a pontuação no vetor de jogadas
             } 
             else if (njogada == 10) {//sequencia alta
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
-                    jogadas[i]= 0;
+                    return 0;
                 }
-                jogadas[i]= 30;//coloca a pontuação no vetor de jogadas
+                return 30;//coloca a pontuação no vetor de jogadas
             } 
             else if (njogada == 11) {//sequencia baixa
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
-                    jogadas[i]= 0;
+                    return 0;
                 }
-                jogadas[i]= 40;//coloca a pontuação no vetor de jogadas
+                return 40;//coloca a pontuação no vetor de jogadas
             } 
             else if (njogada == 12) { //general
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
-                    jogadas[i]= 0;
+                    return 0;
                 }
-                jogadas[i]= 50; //coloca a pontuação no vetor de jogadas
+                return 50; //coloca a pontuação no vetor de jogadas
             } 
             else{
                 System.out.println("Essa jogada não exite");
             }
+
+        return 0;
         
     }
 

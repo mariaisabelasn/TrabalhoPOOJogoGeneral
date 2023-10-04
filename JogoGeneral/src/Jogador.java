@@ -34,8 +34,9 @@ public class Jogador {
                 if (teclado.hasNextInt()) {
                     opcao = teclado.nextInt();
                     teclado.nextLine(); // Limpar o buffer de entrada após a leitura do inteiro
-                    if (jogoGeneral.validarJogada(opcao)==true) {
-                        this.jogoGeneral.setJogadas(opcao, jogoGeneral.pontuarJogada(opcao));
+                    System.out.println("opcao= "+opcao);
+                    if (jogoGeneral.getJogadas(opcao-1)==-1) {
+                        this.jogoGeneral.setJogadas(opcao-1, jogoGeneral.pontuarJogada(opcao));
                     } else {
                         System.out.println("Jogada indisponível, tente outra");
                     }
@@ -44,7 +45,7 @@ public class Jogador {
                     System.out.println("Entrada inválida. Digite um número válido.");
                     opcao = -1; // Defina uma opção inválida para continuar o loop
                 }
-            } while (jogoGeneral.validarJogada(opcao)!=true);
+            } while (jogoGeneral.getJogadas(opcao-1)==-1);
         }
         
         else{   // Se for do tipo máquina irá escolher a melhor jogada
@@ -52,12 +53,12 @@ public class Jogador {
             int melhorJogada=0;
     
             while(opcao<13){//basicamente vai ver para aquela rodada qual vai ser a jogada com maior pontuação
-                if(this.jogoGeneral.getJogadas(opcao)==-1){//se já não for ocupada a jogada
-                    int pontuacao = jogoGeneral.getJogadas(opcao);
+                if(this.jogoGeneral.getJogadas(opcao-1)==-1){//se já não for ocupada a jogada
+                    int pontuacao = jogoGeneral.getJogadas(opcao-1);
 
                     if(pontuacao>melhorPontuacao){//serve p achar a melhor jogada mas vai acabar preenchendo todas as outras do vetor jogadas tbm
                         melhorPontuacao=pontuacao;
-                        melhorJogada=opcao;
+                        melhorJogada=opcao-1;
 
                     }
 
@@ -74,8 +75,8 @@ public class Jogador {
                     this.jogoGeneral.setJogadas(i, -1); //resolve o problema de preenchimento de outras jogadas
                 }
             }
-
-            return melhorJogada;
+            this.jogoGeneral.setJogadas(melhorJogada, melhorPontuacao);//pontua para a máquina
+            return melhorJogada;//retorna a jogada feita pela maquina
         }
 
         return 0; // caso todas as jogadas tenham sido executadas ele zera 

@@ -9,7 +9,7 @@ public class Campeonato {
     private Jogador[] players = new Jogador[10]; // vetor dos jogadores do campeonato
     private int contJogadores = 0;
     private Scanner teclado = new Scanner(System.in);// scanf do java
-    JogoGeneral jogo = new JogoGeneral();
+    private JogoGeneral jogo = new JogoGeneral();
     private String nome, biotipo;
 
     public Campeonato() {
@@ -19,7 +19,7 @@ public class Campeonato {
     }
 
     public void incluirjogador() {
-        if (contJogadores < 5 && players[contJogadores] == null) {
+        if (contJogadores < 10 && players[contJogadores] == null) {
 
             System.out.println("Nome do Jogador(a): ");
             nome = teclado.nextLine();
@@ -71,13 +71,25 @@ public class Campeonato {
                 jogo.rolarDados();
                 jogo.mostrarDados();
 
-                System.out.println("Para qual jogada deseja marcar: [1-13] " + players[i].getNome() + "?");
+ 
+                if (players[i].getTipoJogador().equals("H")) {
+                    int opcao = 0;
+                    do {
+                        System.out.println("Para qual jogada deseja marcar: [1-13] " + players[i].getNome() + "?");
+                        System.out.println("1\t2\t3\t4\t5\t6\t7(T)\t8(Q)\t9(F)\t10(S+)\t11(S-)\t12(G)\t13(X)");
+                        players[i].mostrarJogadasExecutadas();
+                        opcao = teclado.nextInt();
+                        teclado.nextLine(); // Limpar o buffer de entrada após a leitura do inteiro
+                        System.out.println("opcao= "+opcao);
+                        //players[i].escolherJogada();
+                        if (jogo.getJogadas(opcao-1)==-1) {
+                            this.jogo.setJogadas(opcao-1, this.jogo.pontuarJogada(opcao));
+                        } else {
+                            System.out.println("Jogada indisponível, tente outra");
+                        }
+                    } while (jogo.getJogadas(opcao-1)==-1);
 
-                
-                System.out.println("1\t2\t3\t4\t5\t6\t7(T)\t8(Q)\t9(F)\t10(S+)\t11(S-)\t12(G)\t13(X)"); 
-                players[i].mostrarJogadasExecutadas();
-                players[i].escolherJogada();
-
+                }
             }
         }
     }

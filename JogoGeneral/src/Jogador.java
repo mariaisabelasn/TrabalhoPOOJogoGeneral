@@ -26,15 +26,11 @@ public class Jogador {
     public int getJogoGeneral(int i){ 	// Função para pegar as jogadas da "ficha" dos respectivos jogadores.
         return this.jogoGeneral.getJogadas(i);
     }
-
-    public void escolherJogada(){
-        int opcao = 0;
-        if (getTipoJogador().equals("H")) {
-            do {
-                if (teclado.hasNextInt()) {
-                    opcao = teclado.nextInt();
-                    teclado.nextLine(); // Limpar o buffer de entrada após a leitura do inteiro
-                    System.out.println("opcao= "+opcao);
+/*
+ 
+public void escolherJogada(){
+    int opcao = 0;
+        
                     if (jogoGeneral.getJogadas(opcao-1)==-1) {
                         this.jogoGeneral.setJogadas(opcao-1, this.jogoGeneral.pontuarJogada(opcao));
                     } else {
@@ -45,30 +41,29 @@ public class Jogador {
                     System.out.println("Entrada inválida. Digite um número válido.");
                     opcao = -1; // Defina uma opção inválida para continuar o loop
                 }
-            } while (jogoGeneral.getJogadas(opcao-1)==-1);
-        }
-        
-        else{   // Se for do tipo máquina irá escolher a melhor jogada
+                
+                
+                else{   // Se for do tipo máquina irá escolher a melhor jogada
             int melhorPontuacao = 0;
             int melhorJogada=0;
                 while(opcao<13){//basicamente vai ver para aquela rodada qual vai ser a jogada com maior pontuação
                 if(this.jogoGeneral.getJogadas(opcao)==-1){//se já não for ocupada a jogada
                     int pontuacao = jogoGeneral.getJogadas(opcao);
-
+                    
                     if(pontuacao>melhorPontuacao){//serve p achar a melhor jogada mas vai acabar preenchendo todas as outras do vetor jogadas tbm
                         melhorPontuacao=pontuacao;
                         melhorJogada=opcao;
-
+                        
                     }
-
+                    
                 }
                 else{
                     vet[opcao] = 1;//se a jogada já tiver sido usada anteriormente é marcada como 1;
                 }
-
+                
                 opcao++;
             }
-
+            
             for (int i=0; i<13; i++){
                 if(this.jogoGeneral.getJogadas(i)!= melhorPontuacao && vet[i]!=1){
                     this.jogoGeneral.setJogadas(i, -1); //resolve o problema de preenchimento de outras jogadas
@@ -79,6 +74,7 @@ public class Jogador {
             System.out.println("jogada da maquina: "+melhorJogada);//retorna a jogada feita pela maquina
         }
     }
+    */
 
 
     public void mostrarJogadasExecutadas(){

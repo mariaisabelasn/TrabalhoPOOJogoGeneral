@@ -45,7 +45,7 @@ public class JogoGeneral {
 
         if (njogada == 1) {
             if (jogadas[0] != -1) { //verifica se dentro das jogadas feitas essa já n está preenchida
-                System.out.println("Jodada já utilizada.");
+                System.out.println("Jogada já utilizada.");
                 return false;
             }
             do {
@@ -57,7 +57,7 @@ public class JogoGeneral {
         } 
         else if (njogada == 2) {
             if(jogadas[1]!=-1){
-                System.out.println("Jodada já utilizada.");
+                System.out.println("Jogada já utilizada.");
                 return false;
               }
             do {
@@ -69,7 +69,7 @@ public class JogoGeneral {
         } 
         else if (njogada == 3) {
             if(jogadas[2]!=-1){
-                System.out.println("Jodada já utilizada.");
+                System.out.println("Jogada já utilizada.");
                 return false;
               }
             do {
@@ -81,7 +81,7 @@ public class JogoGeneral {
         } 
         else if (njogada == 4) {
             if(jogadas[3]!=-1){
-                System.out.println("Jodada já utilizada.");
+                System.out.println("Jogada já utilizada.");
                 return false;
               }
             do {
@@ -93,7 +93,7 @@ public class JogoGeneral {
         } 
         else if (njogada == 5) {
             if(jogadas[4]!=-1){
-                System.out.println("Jodada já utilizada.");
+                System.out.println("Jogada já utilizada.");
                 return false;
               }
             do {
@@ -105,7 +105,7 @@ public class JogoGeneral {
         } 
         else if (njogada == 6) {
             if(jogadas[5]!=-1){
-                System.out.println("Jodada já utilizada.");
+                System.out.println("Jogada já utilizada.");
                 return false;
               }
             do {
@@ -117,7 +117,7 @@ public class JogoGeneral {
         } 
         else if (njogada == 7) { //trinca
             if(jogadas[6]!=-1){
-                System.out.println("Jodada já utilizada.");
+                System.out.println("Jogada já utilizada.");
                 return false;
               }
             if(contador(3)){
@@ -129,7 +129,7 @@ public class JogoGeneral {
         }
         else if (njogada == 8) { //quadrula
             if(jogadas[7]!=-1){
-                System.out.println("Jodada já utilizada.");
+                System.out.println("Jogada já utilizada.");
                 return false;
               }
             
@@ -173,7 +173,7 @@ public class JogoGeneral {
         }
         else if(njogada==10){//Sequencia alta
             if(jogadas[9]!=-1){
-                System.out.println("Jodada já utilizada.");
+                System.out.println("Jogada já utilizada.");
                 return false;
               }
             int vet[]={2,3,4,5,6};//vetor como a jogada de sequencia alta deve ser
@@ -186,7 +186,7 @@ public class JogoGeneral {
         }
         else if(njogada==11){//Sequencia Baixa
             if(jogadas[10]!=-1){
-                System.out.println("Jodada já utilizada.");
+                System.out.println("Jogada já utilizada.");
                 return false;
               }
             int[] vet={1,2,3,4,5};//vetor como a jogada de sequencia baixa deve ser
@@ -199,7 +199,7 @@ public class JogoGeneral {
         }
         else if(njogada==12){//General
             if(jogadas[11]!=-1){
-                System.out.println("Jodada já utilizada.");
+                System.out.println("Jogada já utilizada.");
                 return false;
               }
             
@@ -227,6 +227,7 @@ public class JogoGeneral {
 //.
     public int pontuarJogada(int njogada) {
         // if () { // se a jogada for validada
+             
             int i = 0;
             int cont = 0;
             if (njogada == 1 || njogada==2 || njogada==3 || njogada==4 || njogada==5 || njogada==6 || njogada==13) { //dá pra juntar no mesmo if jogadas 1 2 3 4 5 6 e aleatoria pq todos os resultados delas são as somas
@@ -300,6 +301,7 @@ public class JogoGeneral {
     public Boolean contador (int x){ // recebe a quantidade que deve ser repetido (por ex da quadra x=4)
         boolean resultado = false;
         int posicao, cont=0;
+        
 
         for (int j=0; j<5; j++){
             cont=0;

@@ -29,7 +29,7 @@ public class Jogador {
 /*
  
 public void escolherJogada(){
-    int opcao = 0;
+    int opcao = 0;m
         
                     if (jogoGeneral.getJogadas(opcao-1)==-1) {
                         this.jogoGeneral.setJogadas(opcao-1, this.jogoGeneral.pontuarJogada(opcao));

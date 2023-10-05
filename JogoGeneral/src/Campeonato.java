@@ -79,7 +79,7 @@ public class Campeonato {
                         System.out.println("1\t2\t3\t4\t5\t6\t7(T)\t8(Q)\t9(F)\t10(S+)\t11(S-)\t12(G)\t13(X)");
                         players[i].mostrarJogadasExecutadas();
                         opcao = teclado.nextInt();
-                        teclado.nextLine(); // Limpar o buffer de entrada após a leitura do inteiro
+                        teclado.nextLine(); // Limpar o buffer de entracda após a leitura do inteiro
                         System.out.println("opcao= "+opcao);
                         //players[i].escolherJogada();
                         if (jogo.getJogadas(opcao-1)==-1) {

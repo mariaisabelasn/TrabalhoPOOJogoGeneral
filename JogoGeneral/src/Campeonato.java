@@ -78,7 +78,7 @@ public class Campeonato {
                 int opcao = 0;
 
  
-                if (players[i].getTipoJogador().equals("H")) {
+                if (players[i].getTipoJogador().equals("H")|| players[i].getTipoJogador().equals("h")) {
                     opcao=0;
                     do {
                         System.out.println("Para qual jogada deseja marcar: [1-13] " + players[i].getNome() + "?");
@@ -100,7 +100,7 @@ public class Campeonato {
                     } while (players[i].getJogo().getJogadas(opcao-1)==-1);
 
                 }
-                else{   // Se for do tipo máquina irá escolher a melhor jogada
+                else if (players[i].getTipoJogador().equals("M")|| players[i].getTipoJogador().equals("m")){   // Se for do tipo máquina irá escolher a melhor jogada
                     opcao=0;
                     int melhorPontuacao = 0;
                     int melhorJogada=0;
@@ -131,7 +131,6 @@ public class Campeonato {
         
                     System.out.println("Jogada da maquina: "+ melhorJogada);//retorna a jogada feita pela maquina
                 }
-
             }
         }
     }

@@ -24,8 +24,15 @@ public class Campeonato implements Serializable {
 
             System.out.println("Nome do Jogador(a): ");
             nome = teclado.nextLine();
-            System.out.println("Tipo do Jogador [H-Humano ou M-Máquina]: ");
-            biotipo = teclado.nextLine();
+
+            do{
+                System.out.println("Tipo do Jogador [H-Humano ou M-Máquina]: ");
+                biotipo = teclado.nextLine();
+               
+                if(biotipo!="H" || biotipo!="h" || biotipo!="M" || biotipo!="m"){
+                    break;//sai
+                }
+            }while(biotipo!="H" && biotipo!="h" && biotipo!="M" && biotipo!="m");//tratamento de dados pra caso o biotipo for diferente de humano ou máquina
 
             Jogador jogador = new Jogador(nome, biotipo);
             players[contJogadores] = jogador;
@@ -151,16 +158,16 @@ public class Campeonato implements Serializable {
         System.out.print(type[j]+"\t");//imprime os nomes das jogadas
         
         for(int k=0; k<contJogadores; k++){
-            System.out.print(players[k].getJogoGeneral(j)+"\t"); // pega as pontuações jogadas de uma "ficha" dos jogadores que é o jogogeneral
+            System.out.print(players[k].getJogoGeneral(j)+"\t\t"); // pega as pontuações jogadas de uma "ficha" dos jogadores que é o jogogeneral
         }
         System.out.print("\n");
        }
 
-       System.out.println("-------------------------");
+       System.out.println("--------------------------------------");
        System.out.print("Total\t");
 
        for(int k=0; k<contJogadores; k++){
-            System.out.print(somaJogadas(k)+"\t");
+            System.out.print(somaJogadas(k)+"\t\t");
         }
         System.out.print("\n");
 

@@ -101,8 +101,8 @@ public void escolherJogada(){
     }
 
     public void imprimirDados(){ //imprime nome tipo e jogadas do jogador 
-        System.out.println(this.nome.toString());
-        System.out.println(this.tipoJogador.toString());
+        System.out.println("Nome do jogador(a): "+this.nome.toString());
+        System.out.println("Tipo do jogador(a): "+this.tipoJogador.toString());
         System.out.println(this.jogoGeneral.toString());
     }
 

@@ -44,22 +44,27 @@ public class Campeonato {
         System.out.println("Digite o nome do jogador:");
         nome = teclado.nextLine();
         int i=0;
+        boolean verifica=false;
         do{
             if (nome.equals(players[i].getNome())) {
-                for (int j = i; j < contJogadores - 1; j++) {
-                    players[j] = players[j - 1];// vai "puxando" os que vem depois pro lugar do exclindo e reordenando
+                for (int j = i; j < contJogadores; j++) {
+                    players[j].dell();
+                    players[j] = players[j+1];// vai "puxando" os que vem depois pro lugar do exclindo e reordenando
                 }
-                contJogadores--;// diminui a quantidade total de jogadore para que, se o usuario quiser, possa
-                                // adicionar outro
+                contJogadores--;// diminui a quantidade total de jogadores para que, se o usuario quiser, possa adicionar outro
+                verifica=true;//verifica que teve um jogador
                 break;
-            }
-            else{
-                System.out.println("Jogador(a) inexistente");
-
             }
             i++;
         }while(i!=contJogadores);
-        players[contJogadores] = null;
+        
+        
+        if (verifica==false){//caso não haja o jogador
+                System.out.println("Jogador(a) inexistente");
+        }
+        else{
+            System.out.println("Jogador(a) excluido com sucesso");
+        }
 
     }
 

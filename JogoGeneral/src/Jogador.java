@@ -78,6 +78,11 @@ public void escolherJogada(){
         }
     }
     */
+    public void dell(){ //deleta os dados do jogador
+        this.nome=null;
+        this.tipoJogador=null;
+        this.jogoGeneral=null;
+    }
 
 
     public void mostrarJogadasExecutadas(){

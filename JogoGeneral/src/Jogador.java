@@ -1,7 +1,7 @@
-
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Jogador {
+public class Jogador implements Serializable{
     private String nome = new String();
     private String tipoJogador = new String();
     private JogoGeneral jogoGeneral = new JogoGeneral();

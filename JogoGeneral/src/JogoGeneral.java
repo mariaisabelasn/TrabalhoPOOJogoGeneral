@@ -288,6 +288,17 @@ public class JogoGeneral implements Serializable{
                 }
                 return 50; //retorna a pontuação 
             } 
+            else if (njogada == 13 ) { // aleatoria
+                if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
+                    return 0;
+                }
+                do {
+                    cont += dados[i].getSideUp();
+                    i++;
+                } while (i != 5);
+
+                return cont; //retorna a pontuação 
+            } 
             else{
                 System.out.println("Essa jogada não exite");
             }

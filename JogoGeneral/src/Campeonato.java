@@ -28,11 +28,8 @@ public class Campeonato implements Serializable {
             do{
                 System.out.println("Tipo do Jogador [H-Humano ou M-Máquina]: ");
                 biotipo = teclado.nextLine();
-               
-                if(biotipo!="H" || biotipo!="h" || biotipo!="M" || biotipo!="m"){
-                    break;//sai
-                }
-            }while(biotipo!="H" && biotipo!="h" && biotipo!="M" && biotipo!="m");//tratamento de dados pra caso o biotipo for diferente de humano ou máquina
+    
+            }while(!biotipo.equals("H") && !biotipo.equals("h") && !biotipo.equals("M") && !biotipo.equals("m"));//tratamento de dados pra caso o biotipo for diferente de humano ou máquina
 
             Jogador jogador = new Jogador(nome, biotipo);
             players[contJogadores] = jogador;

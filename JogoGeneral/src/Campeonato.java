@@ -117,13 +117,14 @@ public class Campeonato implements Serializable {
                             if(pontuacao>melhorPontuacao){//serve p achar a melhor jogada mas vai acabar preenchendo todas as outras do vetor jogadas tbm
                                 melhorPontuacao=pontuacao;
                                 melhorJogada=opcao;
+                                vet[melhorJogada] = 1;//se a jogada já tiver sido usada anteriormente é marcada como 1;
                                 
                             }
                             
                         }
-                        else{
-                            vet[melhorJogada] = 1;//se a jogada já tiver sido usada anteriormente é marcada como 1;
-                        }
+                        // else{
+                        //     vet[melhorJogada] = 1;//se a jogada já tiver sido usada anteriormente é marcada como 1;
+                        // }
                         
                         opcao++;
                     }

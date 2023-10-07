@@ -180,6 +180,7 @@ public class Campeonato implements Serializable {
 
     public void gravarEmArquivo() {
         /* Gravar em arquivo */
+        System.out.println("");
         File arquivo = new File("Campeonato.dat");
         try {
             FileOutputStream fout = new FileOutputStream(arquivo);
@@ -189,6 +190,7 @@ public class Campeonato implements Serializable {
             oos.flush();
             oos.close();
             fout.close();
+            System.out.println("Gravado com sucesso!");
 
         } catch (Exception ex) {
             System.err.println("erro: " + ex.toString());

@@ -111,7 +111,7 @@ public class Campeonato implements Serializable {
                     int melhorJogada=0;
                         while(opcao<13){//basicamente vai ver para aquela rodada qual vai ser a jogada com maior pontuação
                         if(this.players[i].getJogo().getJogadas(opcao)==-1){//se já não for ocupada a jogada
-                            int pontuacao = this.players[i].getJogo().pontuarJogada(opcao);
+                            int pontuacao = this.players[i].getJogo().pontuarJogada(opcao+1);
                             
                             if(pontuacao>melhorPontuacao){//serve p achar a melhor jogada mas vai acabar preenchendo todas as outras do vetor jogadas tbm
                                 melhorPontuacao=pontuacao;
@@ -127,14 +127,15 @@ public class Campeonato implements Serializable {
                         opcao++;
                     }
                     
-                    for (i=0; i<13; i++){
-                        if(this.players[i].getJogo().getJogadas(i)!= melhorPontuacao && vet[i]==1){
-                            this.players[i].getJogo().setJogadas(i, -1); //resolve o problema de preenchimento de outras jogadas
+                    for (int k=0; k<13; k++){
+                        if(this.players[i].getJogo().getJogadas(k)!= melhorPontuacao && vet[k]==1){
+                            this.players[i].getJogo().setJogadas(k, -1); //resolve o problema de preenchimento de outras jogadas
                         }
-                    }
-                    this.players[i].getJogo().setJogadas(melhorJogada, melhorPontuacao);//pontua para a máquina
-        
-                    System.out.println("Jogada da maquina: "+ melhorJogada);//retorna a jogada feita pela maquina
+                    }  
+                    this.players[i].getJogo().setJogadas(melhorJogada, melhorPontuacao);//pontua para a máquina             
+                    System.out.println("1\t2\t3\t4\t5\t6\t7(T)\t8(Q)\t9(F)\t10(S+)\t11(S-)\t12(G)\t13(X)");
+                    players[i].mostrarJogadasExecutadas();
+                    System.out.println("Jogada que a maquina escolheu: "+ (melhorJogada+1));//retorna a jogada feita pela maquina melhorjogada(posição do vet)+1(pra ficar o "nome" da jogada certinho)
                 }
             }
         }

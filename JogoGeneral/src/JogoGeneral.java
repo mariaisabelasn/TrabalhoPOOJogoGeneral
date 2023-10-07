@@ -236,11 +236,11 @@ public class JogoGeneral {
                 }
                 do {
                     if (dados[i].getSideUp() == njogada) {
-                        cont += dados[i].getSideUp();
+                        cont += njogada;
                         System.out.println("aqui");
                     }
                     i++;
-                } while (i != 5);
+                } while (i < 5);
 
                 return cont;//retorna a pontuação 
             } 

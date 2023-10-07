@@ -52,10 +52,11 @@ public class Campeonato implements Serializable {
         boolean verifica=false;
         do{
             if (nome.equals(players[i].getNome())) {
+                players[i].dell();
                 for (int j = i; j < contJogadores; j++) {
-                    players[j].dell();
                     players[j] = players[j+1];// vai "puxando" os que vem depois pro lugar do exclindo e reordenando
                 }
+                
                 contJogadores--;// diminui a quantidade total de jogadores para que, se o usuario quiser, possa adicionar outro
                 verifica=true;//verifica que teve um jogador
                 break;

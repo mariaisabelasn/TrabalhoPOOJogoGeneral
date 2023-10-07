@@ -1,7 +1,5 @@
-
-//import java.util.Arrays;
-
-public class JogoGeneral {
+import java.io.Serializable;
+public class JogoGeneral implements Serializable{
     private Dado[] dados = new Dado[5];
     private int[] jogadas = new int[13];
 
@@ -25,7 +23,7 @@ public class JogoGeneral {
     }
 
     public void setJogadas(int i, int x) {//vai colocar a pontuação das jogadas
-        this.jogadas[i] = x;
+        jogadas[i] = x;
     }
     
     public String toString() { //transforma o array de dados em uma string
@@ -230,21 +228,21 @@ public class JogoGeneral {
              
             int i = 0;
             int cont = 0;
-            if (njogada == 1 || njogada==2 || njogada==3 || njogada==4 || njogada==5 || njogada==6 || njogada==13) { //dá pra juntar no mesmo if jogadas 1 2 3 4 5 6 e aleatoria pq todos os resultados delas são as somas
+            if (njogada == 1 || njogada==2 || njogada==3 || njogada==4 || njogada==5 || njogada==6 ) { //dá pra juntar no mesmo if jogadas 1 2 3 4 5 6 pq todos os resultados delas são as somas
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }
                 do {
                     if (dados[i].getSideUp() == njogada) {
-                        cont += njogada;
-                        System.out.println("aqui");
+                        cont += dados[i].getSideUp();
+                        // System.out.println("aq66ui");
                     }
                     i++;
-                } while (i < 5);
-
+                } while (i != 5);
+                // System.out.println("Jogada entrou"+cont);
                 return cont;//retorna a pontuação 
             } 
-            else if (njogada == 7) { // trinca
+            else if (njogada == 7 ) { // trinca 
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }
@@ -289,6 +287,17 @@ public class JogoGeneral {
                     return 0;
                 }
                 return 50; //retorna a pontuação 
+            } 
+            else if (njogada == 13 ) { // aleatoria
+                if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
+                    return 0;
+                }
+                do {
+                    cont += dados[i].getSideUp();
+                    i++;
+                } while (i != 5);
+
+                return cont; //retorna a pontuação 
             } 
             else{
                 System.out.println("Essa jogada não exite");

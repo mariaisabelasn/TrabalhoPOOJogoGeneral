@@ -1,11 +1,10 @@
-
+import java.io.Serializable;
 import java.util.Scanner;
-//.
-public class Jogador {
+
+public class Jogador implements Serializable{
     private String nome = new String();
     private String tipoJogador = new String();
     private JogoGeneral jogoGeneral = new JogoGeneral();
-    private int[] vet= new int[13];
         
     Scanner teclado = new Scanner (System.in);
 
@@ -25,6 +24,10 @@ public class Jogador {
 
     public int getJogoGeneral(int i){ 	// Função para pegar as jogadas da "ficha" dos respectivos jogadores.
         return this.jogoGeneral.getJogadas(i);
+    }
+
+    public JogoGeneral getJogo() { //para acessar por outra classe o jogo de cada jogador
+        return this.jogoGeneral;
     }
 /*
  
@@ -75,15 +78,22 @@ public void escolherJogada(){
         }
     }
     */
+    public void dell(){ //deleta os dados do jogador
+        this.nome=null;
+        this.tipoJogador=null;
+        this.jogoGeneral=null;
+    }
 
 
     public void mostrarJogadasExecutadas(){
         // Jogadas já feitas
+        // System.out.println("entrou no mostrar");
 		for (int i = 0 ; i < 13 ; i++) { 
-			if(this.jogoGeneral.getJogadas(i) != -1) {
-				System.out.printf("%d", jogoGeneral.getJogadas(i)); 
+			if(this.jogoGeneral.getJogadas(i) !=-1) {
+                // System.out.println("entrou no mostrar 3");
+				System.out.printf("%d\t", this.jogoGeneral.getJogadas(i)); 
 			} 
-            else {
+            else if(this.jogoGeneral.getJogadas(i) ==-1) {
 				System.out.print("-\t");
 			}
 		}
@@ -91,8 +101,8 @@ public void escolherJogada(){
     }
 
     public void imprimirDados(){ //imprime nome tipo e jogadas do jogador 
-        System.out.println(this.nome.toString());
-        System.out.println(this.tipoJogador.toString());
+        System.out.println("Nome do jogador(a): "+this.nome.toString());
+        System.out.println("Tipo do jogador(a): "+this.tipoJogador.toString());
         System.out.println(this.jogoGeneral.toString());
     }
 

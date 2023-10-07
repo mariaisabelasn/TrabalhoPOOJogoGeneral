@@ -125,7 +125,7 @@ public class JogoGeneral implements Serializable{
                 return false;
             }
         }
-        else if (njogada == 8) { //quadrula
+        else if (njogada == 8) { //quadrupla
             if(jogadas[7]!=-1){
                 System.out.println("Jogada já utilizada.");
                 return false;
@@ -151,7 +151,7 @@ public class JogoGeneral implements Serializable{
                 vet[this.dados[i].getSideUp()-1] += 1; //pega o valor da face e coloca ela na "casa" correspondente do vetor vet[0]=face 1
             }
 
-            boolean trinca=false;//identificadores de trinca e dula
+            boolean trinca=false;//identificadores de trinca e dupla
             boolean dupla=false;//pra ser full house tem que ter uma dupla e uma trinca
             for(i=0; i<6; i++){
                 if(vet[i]==2){
@@ -222,9 +222,8 @@ public class JogoGeneral implements Serializable{
         return false;
 
     }
-//.
+
     public int pontuarJogada(int njogada) {
-        // if () { // se a jogada for validada
              
             int i = 0;
             int cont = 0;
@@ -235,11 +234,9 @@ public class JogoGeneral implements Serializable{
                 do {
                     if (dados[i].getSideUp() == njogada) {
                         cont += dados[i].getSideUp();
-                        // System.out.println("aq66ui");
                     }
                     i++;
                 } while (i != 5);
-                // System.out.println("Jogada entrou"+cont);
                 return cont;//retorna a pontuação 
             } 
             else if (njogada == 7 ) { // trinca 
@@ -253,7 +250,7 @@ public class JogoGeneral implements Serializable{
 
                 return cont; //retorna a pontuação 
             } 
-            else if (njogada == 8) {// quarta
+            else if (njogada == 8) {// quadra
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }

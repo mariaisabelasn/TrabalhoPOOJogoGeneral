@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class UsaCampeonato {
        
     public static void main(String[] args){
-        Campeonato campeonato=new Campeonato();
+        Campeonato campeonato = new Campeonato();
         Scanner teclado = new Scanner (System.in);
         String opcao;
         boolean saida=false;

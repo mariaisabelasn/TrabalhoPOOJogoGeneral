@@ -10,9 +10,10 @@ public class Campeonato implements Serializable {
     private Jogador[] players = new Jogador[10]; // vetor dos jogadores do campeonato
     private int contJogadores = 0;
     private Scanner teclado = new Scanner(System.in);// scanf do java
-    private int[] vet= new int[13];
+    private int[] vet = new int[13];
     private String nome, biotipo;
 
+    // CONSTRUTOR
     public Campeonato() {
         for (int i = 0; i < players.length; i++) {
             players[i] = null; // Define cada elemento como nulo
@@ -82,7 +83,6 @@ public class Campeonato implements Serializable {
                 players[i].getJogo().mostrarDados();
                 int opcao = 0;
 
- 
                 if (players[i].getTipoJogador().equals("H")|| players[i].getTipoJogador().equals("h")) {
                     opcao=0;
                     do {
@@ -98,9 +98,7 @@ public class Campeonato implements Serializable {
                             }
                         }
                         if (players[i].getJogo().getJogadas(opcao-1)==-1) { //se a jogada ainda nao tiver sido feita
-
                             this.players[i].getJogo().setJogadas(opcao-1, this.players[i].getJogo().pontuarJogada(opcao));
-                           
                         } 
                     } while (players[i].getJogo().getJogadas(opcao-1)==-1);
 
@@ -120,10 +118,7 @@ public class Campeonato implements Serializable {
                             }
                             
                         }
-                        // else{
-                        //     vet[melhorJogada] = 1;//se a jogada já tiver sido usada anteriormente é marcada como 1;
-                        // }
-                        
+                       
                         opcao++;
                     }
                     
@@ -152,24 +147,25 @@ public class Campeonato implements Serializable {
 
         String[] type={"1", "2", "3", "4", "5", "6", "7(T)", "8(Q)", "9(F)", "10(S+)", "11(S-)", "12(G)", "13(X)"};//string com os "nomes" das jogadas
         
-       for(int j=0; j<13;j++){
-        System.out.print(type[j]+"\t");//imprime os nomes das jogadas
-        
-        for(int k=0; k<contJogadores; k++){
-            System.out.print(players[k].getJogoGeneral(j)+"\t\t"); // pega as pontuações jogadas de uma "ficha" dos jogadores que é o jogogeneral
+        for(int j=0; j<13;j++){
+            System.out.print(type[j]+"\t");//imprime os nomes das jogadas
+            
+            for(int k=0; k<contJogadores; k++){
+                System.out.print(players[k].getJogoGeneral(j)+"\t\t"); // pega as pontuações jogadas de uma "ficha" dos jogadores que é o jogogeneral
+            }
+            System.out.print("\n");
         }
-        System.out.print("\n");
-       }
 
-       System.out.println("--------------------------------------");
-       System.out.print("Total\t");
+        System.out.println("--------------------------------------");
+        System.out.print("Total\t");
 
-       for(int k=0; k<contJogadores; k++){
+        for(int k=0; k<contJogadores; k++){
             System.out.print(somaJogadas(k)+"\t\t");
         }
         System.out.print("\n");
 
     }
+
     public int somaJogadas(int jogante){
             int soma=0;
             for(int j=0; j<13; j++){//pra percorrer todos od jogos de cada jogador
@@ -206,12 +202,16 @@ public class Campeonato implements Serializable {
             ObjectInputStream oin = new ObjectInputStream(fin);
 
             //Lendo objetos de um arquivo
-            Jogador[] players= (Jogador[]) oin.readObject();
+            Jogador[] players = (Jogador[]) oin.readObject();
             oin.close();
             fin.close();
 
             for (Jogador p : players) {
-                p.imprimirDados();//Ainda falta essa função aqui
+                if(p!=null){
+                    //p.imprimirDados();
+                    System.out.println("Nome do jogador(a): "+p.getNome().toString());
+                    System.out.println("Tipo do jogador(a): "+p.getTipoJogador().toString());
+                }
             }
         } catch (Exception ex) {
             System.err.println("erro: " + ex.toString());

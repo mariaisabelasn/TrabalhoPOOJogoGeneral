@@ -10,11 +10,11 @@ public class Jogador implements Serializable{
         this.tipoJogador = tipoJogador;
     }
 
-    public String getNome() {
+    public String getNome() {// Função para pegar o nome dos respectivos jogadores.
         return this.nome;
     }
 
-    public String getTipoJogador() {
+    public String getTipoJogador() {// Função para pegar o tipo dos respectivos jogadores.
         return this.tipoJogador;
     }
 
@@ -32,13 +32,10 @@ public class Jogador implements Serializable{
         this.jogoGeneral=null;
     }
 
-
     public void mostrarJogadasExecutadas() {
         // Jogadas já feitas
-        // System.out.println("entrou no mostrar");
 		for (int i = 0 ; i < 13 ; i++) { 
 			if(this.jogoGeneral.getJogadas(i) !=-1) {
-                // System.out.println("entrou no mostrar 3");
 				System.out.printf("%d\t", this.jogoGeneral.getJogadas(i)); 
 			} 
             else if(this.jogoGeneral.getJogadas(i) ==-1) {

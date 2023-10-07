@@ -56,7 +56,6 @@ public class Campeonato implements Serializable {
                 for (int j = i; j < contJogadores; j++) {
                     players[j] = players[j+1];// vai "puxando" os que vem depois pro lugar do exclindo e reordenando
                 }
-                
                 contJogadores--;// diminui a quantidade total de jogadores para que, se o usuario quiser, possa adicionar outro
                 verifica=true;//verifica que teve um jogador
                 break;
@@ -114,11 +113,10 @@ public class Campeonato implements Serializable {
                         if(this.players[i].getJogo().getJogadas(opcao)==-1){//se já não for ocupada a jogada
                             int pontuacao = this.players[i].getJogo().pontuarJogada(opcao+1);
                             
-                            if(pontuacao>melhorPontuacao){//serve p achar a melhor jogada mas vai acabar preenchendo todas as outras do vetor jogadas tbm
+                            if(pontuacao>=melhorPontuacao){//serve p achar a melhor jogada mas vai acabar preenchendo todas as outras do vetor jogadas tbm
                                 melhorPontuacao=pontuacao;
                                 melhorJogada=opcao;
                                 vet[melhorJogada] = 1;//se a jogada já tiver sido usada anteriormente é marcada como 1;
-                                
                             }
                             
                         }
@@ -130,7 +128,7 @@ public class Campeonato implements Serializable {
                     }
                     
                     for (int k=0; k<13; k++){
-                        if(this.players[i].getJogo().getJogadas(k)!= melhorPontuacao && vet[k]==1){
+                        if(this.players[i].getJogo().getJogadas(k)!= melhorPontuacao && vet[k]!=1){
                             this.players[i].getJogo().setJogadas(k, -1); //resolve o problema de preenchimento de outras jogadas
                         }
                     }  

@@ -1,14 +1,12 @@
-
+import java.io.Serializable;
 import java.util.Scanner;
 
-//.
-public class Jogador {
+public class Jogador implements Serializable{
     private String nome = new String();
     private String tipoJogador = new String();
     private JogoGeneral jogoGeneral = new JogoGeneral();
-    private int[] vet = new int[13];
-
-    Scanner teclado = new Scanner(System.in);
+        
+    Scanner teclado = new Scanner (System.in);
 
     // Construtor
     public Jogador(String nome, String tipoJogador) {
@@ -28,8 +26,13 @@ public class Jogador {
         return this.jogoGeneral.getJogadas(i);
     }
 
-// public void escolherJogada(){
-//     int opcao = 0;
+    public JogoGeneral getJogo() { //para acessar por outra classe o jogo de cada jogador
+        return this.jogoGeneral;
+    }
+/*
+ 
+public void escolherJogada(){
+    int opcao = 0;m
         
 //         if (jogoGeneral.validarJogadas(opcao-1)==true) {
 //             this.jogoGeneral.setJogadas(opcao-1, this.jogoGeneral.pontuarJogada(opcao));
@@ -72,26 +75,35 @@ public class Jogador {
 //         }
 //         this.jogoGeneral.setJogadas(melhorJogada, melhorPontuacao);// pontua para a máquina
 
-//         System.out.println("jogada da maquina: " + melhorJogada);// retorna a jogada feita pela maquina
-//     }
-//     }
+            System.out.println("jogada da maquina: "+melhorJogada);//retorna a jogada feita pela maquina
+        }
+    }
+    */
+    public void dell(){ //deleta os dados do jogador
+        this.nome=null;
+        this.tipoJogador=null;
+        this.jogoGeneral=null;
+    }
+
 
     public void mostrarJogadasExecutadas() {
         // Jogadas já feitas
-        for (int i = 0; i < 13; i++) {
-            if (this.jogoGeneral.validarJogada(i)==true) {
-                System.out.printf("%d", jogoGeneral.getJogadas(i));
-            } 
-            else {
-                System.out.print("-\t");
-            }
-        }
-        System.out.println("");
+        // System.out.println("entrou no mostrar");
+		for (int i = 0 ; i < 13 ; i++) { 
+			if(this.jogoGeneral.getJogadas(i) !=-1) {
+                // System.out.println("entrou no mostrar 3");
+				System.out.printf("%d\t", this.jogoGeneral.getJogadas(i)); 
+			} 
+            else if(this.jogoGeneral.getJogadas(i) ==-1) {
+				System.out.print("-\t");
+			}
+		}
+		System.out.println("");
     }
 
-    public void imprimirDados() { // imprime nome tipo e jogadas do jogador
-        System.out.println(this.nome.toString());
-        System.out.println(this.tipoJogador.toString());
+    public void imprimirDados(){ //imprime nome tipo e jogadas do jogador 
+        System.out.println("Nome do jogador(a): "+this.nome.toString());
+        System.out.println("Tipo do jogador(a): "+this.tipoJogador.toString());
         System.out.println(this.jogoGeneral.toString());
     }
 

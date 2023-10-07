@@ -1,14 +1,13 @@
-
-
+import java.io.Serializable;
 import java.util.Random;
 
-public class Dado {
+public class Dado implements Serializable{
     private int sideUp; //parte superior
 
-        //construtor
-        public Dado(){
-            sideUp = 1;
-        }
+    //construtor
+    public Dado(){
+        sideUp = 1;
+    }
 
     public int getSideUp(){//pega a parte virada pra cima
         return  sideUp;

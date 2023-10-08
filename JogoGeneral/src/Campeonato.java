@@ -7,6 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 
 public class Campeonato implements Serializable {
+    // ------------ Trocar para 10 jogadores depois dos testes
     int n = 5;
     private Jogador[] players = new Jogador[n]; // vetor dos jogadores do campeonato
     private int contJogadores = 0;

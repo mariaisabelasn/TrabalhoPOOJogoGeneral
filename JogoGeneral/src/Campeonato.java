@@ -7,7 +7,8 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 
 public class Campeonato implements Serializable {
-    private Jogador[] players = new Jogador[10]; // vetor dos jogadores do campeonato
+    int n = 5;
+    private Jogador[] players = new Jogador[n]; // vetor dos jogadores do campeonato
     private int contJogadores = 0;
     private Scanner teclado = new Scanner(System.in);// scanf do java
     private int[] vet = new int[13];
@@ -21,7 +22,7 @@ public class Campeonato implements Serializable {
     }
 
     public void incluirjogador() {
-        if (contJogadores < 10 && players[contJogadores] == null) {
+        if (contJogadores < 5 && players[contJogadores] == null) {
 
             System.out.println("Nome do Jogador(a): ");
             nome = teclado.nextLine();
@@ -54,7 +55,7 @@ public class Campeonato implements Serializable {
         do{
             if (nome.equals(players[i].getNome())) {
                 players[i].dell();
-                for (int j = i; j < contJogadores; j++) {
+                for (int j = i; j < (contJogadores-1); j++) {
                     players[j] = players[j+1];// vai "puxando" os que vem depois pro lugar do exclindo e reordenando
                 }
                 contJogadores--;// diminui a quantidade total de jogadores para que, se o usuario quiser, possa adicionar outro
@@ -75,6 +76,12 @@ public class Campeonato implements Serializable {
     }
 
     public void iniciarCampeonato() {//inicia ou reinicia um campeonato
+        for(int i = 0; i < contJogadores; i++) { // para iniciar ou resetar as jogadas e poder começar o campeonato novamente
+            for(int j = 0; j < 13; j++){
+                players[i].getJogo().setJogadas(j, -1);
+            }
+        }
+
         for (int j = 0; j < 13; j++) {
             for (int i = 0; i < contJogadores; i++) {
                 System.out.println(">>Rolando dados para " + players[i].getNome());
@@ -168,7 +175,7 @@ public class Campeonato implements Serializable {
 
     public int somaJogadas(int jogante){
             int soma=0;
-            for(int j=0; j<13; j++){//pra percorrer todos od jogos de cada jogador
+            for(int j=0; j<13; j++){//pra percorrer todos os jogos de cada jogador
                 soma+=players[jogante].getJogoGeneral(j);
             }  
             return soma; 

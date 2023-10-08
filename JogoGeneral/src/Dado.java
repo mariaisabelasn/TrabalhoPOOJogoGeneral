@@ -13,6 +13,10 @@ public class Dado implements Serializable{
         return  sideUp;
     }
 
+    public void setSideUp(int x){
+        sideUp = x;
+    }
+
     public void roll(){ //faz a rolagem do dado
         Random x = new Random();
         this.sideUp = x.nextInt(6) + 1;

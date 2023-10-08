@@ -6,7 +6,6 @@ public class UsaCampeonato {
         Scanner teclado = new Scanner (System.in);
         String opcao;
         boolean saida=false;
-        
 
         do{
             System.out.println ("..:: Menu interativo :..");

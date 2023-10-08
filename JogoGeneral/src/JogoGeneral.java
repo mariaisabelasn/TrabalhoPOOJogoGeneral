@@ -125,7 +125,7 @@ public class JogoGeneral implements Serializable{
                 return false;
             }
         }
-        else if (njogada == 8) { //quadrula
+        else if (njogada == 8) { //quadrupla
             if(jogadas[7]!=-1){
                 System.out.println("Jogada já utilizada.");
                 return false;
@@ -151,7 +151,7 @@ public class JogoGeneral implements Serializable{
                 vet[this.dados[i].getSideUp()-1] += 1; //pega o valor da face e coloca ela na "casa" correspondente do vetor vet[0]=face 1
             }
 
-            boolean trinca=false;//identificadores de trinca e dula
+            boolean trinca=false;//identificadores de trinca e dupla
             boolean dupla=false;//pra ser full house tem que ter uma dupla e uma trinca
             for(i=0; i<6; i++){
                 if(vet[i]==2){
@@ -175,6 +175,7 @@ public class JogoGeneral implements Serializable{
                 return false;
               }
             int vet[]={2,3,4,5,6};//vetor como a jogada de sequencia alta deve ser
+            //ordenarDados();//ordenar vetor de dados
             for(i=0; i<5; i++){
                 if(this.dados[i].getSideUp()!=vet[i]){
                     return false;
@@ -188,6 +189,7 @@ public class JogoGeneral implements Serializable{
                 return false;
               }
             int[] vet={1,2,3,4,5};//vetor como a jogada de sequencia baixa deve ser
+            //ordenarDados();//ordenar vetor de dados 
             for(i=0; i<5; i++){
                 if(this.dados[i].getSideUp()!=vet[i]){
                     return false;
@@ -222,9 +224,8 @@ public class JogoGeneral implements Serializable{
         return false;
 
     }
-//.
+
     public int pontuarJogada(int njogada) {
-        // if () { // se a jogada for validada
              
             int i = 0;
             int cont = 0;
@@ -235,11 +236,9 @@ public class JogoGeneral implements Serializable{
                 do {
                     if (dados[i].getSideUp() == njogada) {
                         cont += dados[i].getSideUp();
-                        // System.out.println("aq66ui");
                     }
                     i++;
                 } while (i != 5);
-                // System.out.println("Jogada entrou"+cont);
                 return cont;//retorna a pontuação 
             } 
             else if (njogada == 7 ) { // trinca 
@@ -253,7 +252,7 @@ public class JogoGeneral implements Serializable{
 
                 return cont; //retorna a pontuação 
             } 
-            else if (njogada == 8) {// quarta
+            else if (njogada == 8) {// quadra
                 if(validarJogada(njogada)==false){ //se a jogada escolhida não for valida ela é zerada
                     return 0;
                 }
@@ -331,9 +330,22 @@ public class JogoGeneral implements Serializable{
         else{
             return false;
         }
- }
+    }
 
- public void mostrarDados (){
+    // public void ordenarDados() { //função para ordenar os dados para algumas jogadas
+    //     int x;
+
+    //     for (int i = 0; i < 5 - 1; i++) {
+    //         for (int j = 0; j < 5 - i - 1; j++)
+    //             if (dados[j].getSideUp() > dados[j + 1].getSideUp()) {
+    //                 x = dados[j].getSideUp();
+    //                 dados[j].setSideUp(dados[j + 1].getSideUp());
+    //                 dados[j + 1].setSideUp(x);
+    //             }
+    //     }
+    // }
+
+    public void mostrarDados (){
         for (int i = 0; i < 5; i++) {
             System.out.print(dados[i].toString()+" ") ;
         }    

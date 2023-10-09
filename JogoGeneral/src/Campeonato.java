@@ -52,13 +52,17 @@ public class Campeonato implements Serializable {
         System.out.println("Digite o nome do jogador:");
         nome = teclado.nextLine();
         int i=0;
+        int j;
         boolean verifica=false;
         do{
             if (nome.equals(players[i].getNome())) {
                 players[i].dell();
-                for (int j = i; j < (contJogadores-1); j++) {
-                    players[j] = players[j+1];// vai "puxando" os que vem depois pro lugar do exclindo e reordenando
+                for (j = i; j < (contJogadores); j++) {
+                    if(j+1!=5){//se n for o final pra não puxar lixo
+                         players[j] = players[j+1];// vai "puxando" os que vem depois pro lugar do exclindo e reordenando
+                    }
                 }
+                players[j-1]=null;//zera o ultimo indice
                 contJogadores--;// diminui a quantidade total de jogadores para que, se o usuario quiser, possa adicionar outro
                 verifica=true;//verifica que teve um jogador
                 break;
@@ -149,7 +153,7 @@ public class Campeonato implements Serializable {
         System.out.print("Jogada\t");
 
         for(int i=0; i<contJogadores; i++){
-            System.out.print(players[i].getNome()+"("+players[i].getTipoJogador()+")\t");
+            System.out.print(players[i].getNome()+"("+players[i].getTipoJogador()+")\t\t");
         } // vai imprimir o nome e o tipo de todos os players lado a lado
         System.out.print("\n"); //pula linha quando os nomes terminam
 
@@ -164,7 +168,7 @@ public class Campeonato implements Serializable {
             System.out.print("\n");
         }
 
-        System.out.println("--------------------------------------");
+        System.out.println("-------------------<3-------------------<3-------------------<3-------------------");
         System.out.print("Total\t");
 
         for(int k=0; k<contJogadores; k++){

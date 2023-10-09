@@ -3,6 +3,7 @@ public class Jogador implements Serializable{
     private String nome = new String();
     private String tipoJogador = new String();
     private JogoGeneral jogoGeneral = new JogoGeneral();
+   
 
     // Construtor
     public Jogador(String nome, String tipoJogador) {
@@ -43,12 +44,6 @@ public class Jogador implements Serializable{
 			}
 		}
 		System.out.println("");
-    }
-
-    public void imprimirDados(){ //imprime nome tipo e jogadas do jogador 
-        System.out.println("Nome do jogador(a): "+this.nome.toString());
-        System.out.println("Tipo do jogador(a): "+this.tipoJogador.toString());
-        System.out.println(this.jogoGeneral.toString());
     }
 
 }

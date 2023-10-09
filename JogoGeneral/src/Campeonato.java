@@ -166,8 +166,12 @@ public class Campeonato implements Serializable {
             }
             System.out.print("\n");
         }
-
-        System.out.println("-------------------<3-------------------<3-------------------<3-------------------<3-------------------<3-------------------<3-------------------<3-------------------");
+        if(contJogadores<=5){//para imprimir linha fofa 
+            System.out.println("-------------------<3-------------------<3-------------------<3-------------------");
+        }
+        else if(contJogadores>5){
+            System.out.println("-------------------<3-------------------<3-------------------<3-------------------<3------------------<3-------------------<3------------------");
+        }
         System.out.print("Total\t");
 
         for(int k=0; k<contJogadores; k++){
@@ -207,6 +211,7 @@ public class Campeonato implements Serializable {
 
     public void lerDoArquivo() {
         File arquivo = new File("Campeonato.dat");
+        int i=1;
 
         try {
             FileInputStream fin = new FileInputStream(arquivo);
@@ -218,12 +223,13 @@ public class Campeonato implements Serializable {
             fin.close();
 
             for (Jogador p : players) {
-                if(p!=null){
-                    //p.imprimirDados();
-                    System.out.println("Nome do jogador(a): "+p.getNome().toString());
-                    System.out.println("Tipo do jogador(a): "+p.getTipoJogador().toString());
+                if(p!=null){ 
+                    System.out.println("Nome do jogador(a) "+i+ ":"+p.getNome().toString());
+                    System.out.println("Tipo do jogador(a) "+i+":"+p.getTipoJogador().toString());
+                    i++;
                 }
             }
+            mostrarCartela();
         } catch (Exception ex) {
             System.err.println("erro: " + ex.toString());
         }

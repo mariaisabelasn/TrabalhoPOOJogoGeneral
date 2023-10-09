@@ -96,21 +96,16 @@ public class Campeonato implements Serializable {
 
                 if (players[i].getTipoJogador().equals("H")|| players[i].getTipoJogador().equals("h")) {
                     opcao=0;
-                    boolean verificador =false;
                     do {
                         System.out.println("Para qual jogada deseja marcar: [1-13] " + players[i].getNome() + "?");
                         System.out.println("1\t2\t3\t4\t5\t6\t7(T)\t8(Q)\t9(F)\t10(S+)\t11(S-)\t12(G)\t13(X)");
                         players[i].mostrarJogadasExecutadas();
 
-                        while(verificador==false || opcao<=0|| opcao>13 || players[i].getJogo().getJogadas(opcao-1)!=-1){//caso o usuário tente escolher uma opcao inexistente ou alguma jogada já feita de novo
-                            if (teclado.hasNextInt()){//vai exigir que a opcao seja inteira
-                                    opcao = teclado.nextInt();
-                                    teclado.nextLine(); // Limpar o buffer de entrada após a leitura do inteiro
-                                    verificador=true;
-                            }
-                            else if(verificador ==false||opcao<=0||opcao>13 || players[i].getJogo().getJogadas(opcao-1)!=-1){
+                        while(opcao<=0|| opcao>13 || players[i].getJogo().getJogadas(opcao-1)!=-1){//caso o usuário tente escolher uma opcao inexistente ou alguma jogada já feita de novo
+                            opcao = teclado.nextInt();
+                            teclado.nextLine(); // Limpar o buffer de entrada após a leitura do inteiro
+                            if(opcao<=0||opcao>13 || players[i].getJogo().getJogadas(opcao-1)!=-1){
                                 System.out.println("Jogada inválida, escolha outra.");
-                                verificador=true;
                             }
                         }
                         if (players[i].getJogo().getJogadas(opcao-1)==-1) { //se a jogada ainda nao tiver sido feita
@@ -234,7 +229,7 @@ public class Campeonato implements Serializable {
                     i++;
                 }
             }
-            mostrarCartela();
+            mostrarCartela();//mostra a cartela dos jogos 
         } catch (Exception ex) {
             System.err.println("erro: " + ex.toString());
         }

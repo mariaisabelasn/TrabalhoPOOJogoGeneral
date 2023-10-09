@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 public class Campeonato implements Serializable {
     // ------------ Trocar para 10 jogadores depois dos testes
-    int n = 5;
+    int n = 10;
     private Jogador[] players = new Jogador[n]; // vetor dos jogadores do campeonato
     private int contJogadores = 0;
     private Scanner teclado = new Scanner(System.in);// scanf do java
@@ -23,7 +23,7 @@ public class Campeonato implements Serializable {
     }
 
     public void incluirjogador() {
-        if (contJogadores < 5 && players[contJogadores] == null) {
+        if (contJogadores < n && players[contJogadores] == null) {
 
             System.out.println("Nome do Jogador(a): ");
             nome = teclado.nextLine();
@@ -58,7 +58,7 @@ public class Campeonato implements Serializable {
             if (nome.equals(players[i].getNome())) {
                 players[i].dell();
                 for (j = i; j < (contJogadores); j++) {
-                    if(j+1!=5){//se n for o final pra não puxar lixo
+                    if(j+1!=n){//se n for o final pra não puxar lixo
                          players[j] = players[j+1];// vai "puxando" os que vem depois pro lugar do exclindo e reordenando
                     }
                 }
@@ -168,7 +168,7 @@ public class Campeonato implements Serializable {
             System.out.print("\n");
         }
 
-        System.out.println("-------------------<3-------------------<3-------------------<3-------------------");
+        System.out.println("-------------------<3-------------------<3-------------------<3-------------------<3-------------------<3-------------------<3-------------------<3-------------------");
         System.out.print("Total\t");
 
         for(int k=0; k<contJogadores; k++){

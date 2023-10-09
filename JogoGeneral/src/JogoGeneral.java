@@ -175,7 +175,7 @@ public class JogoGeneral implements Serializable{
                 return false;
               }
             int vet[]={2,3,4,5,6};//vetor como a jogada de sequencia alta deve ser
-            //ordenarDados();//ordenar vetor de dados
+            ordenarDados();//ordenar vetor de dados
             for(i=0; i<5; i++){
                 if(this.dados[i].getSideUp()!=vet[i]){
                     return false;
@@ -189,7 +189,7 @@ public class JogoGeneral implements Serializable{
                 return false;
               }
             int[] vet={1,2,3,4,5};//vetor como a jogada de sequencia baixa deve ser
-            //ordenarDados();//ordenar vetor de dados 
+            ordenarDados();//ordenar vetor de dados 
             for(i=0; i<5; i++){
                 if(this.dados[i].getSideUp()!=vet[i]){
                     return false;
@@ -332,18 +332,18 @@ public class JogoGeneral implements Serializable{
         }
     }
 
-    // public void ordenarDados() { //função para ordenar os dados para algumas jogadas
-    //     int x;
+    public void ordenarDados() { //função para ordenar os dados para algumas jogadas
+        int x;
 
-    //     for (int i = 0; i < 5 - 1; i++) {
-    //         for (int j = 0; j < 5 - i - 1; j++)
-    //             if (dados[j].getSideUp() > dados[j + 1].getSideUp()) {
-    //                 x = dados[j].getSideUp();
-    //                 dados[j].setSideUp(dados[j + 1].getSideUp());
-    //                 dados[j + 1].setSideUp(x);
-    //             }
-    //     }
-    // }
+        for (int i = 0; i < 5 - 1; i++) {
+            for (int j = 0; j < 5 - i - 1; j++)
+                if (dados[j].getSideUp() > dados[j + 1].getSideUp()) {
+                    x = dados[j].getSideUp();
+                    dados[j].setSideUp(dados[j + 1].getSideUp());
+                    dados[j + 1].setSideUp(x);
+                }
+        }
+    }
 
     public void mostrarDados (){
         for (int i = 0; i < 5; i++) {

@@ -103,21 +103,32 @@ public class Campeonato implements Serializable {
                         System.out.println("1\t2\t3\t4\t5\t6\t7(T)\t8(Q)\t9(F)\t10(S+)\t11(S-)\t12(G)\t13(X)");
                         players[i].mostrarJogadasExecutadas();
 
-                        while(verificador==false || opcao<=0|| opcao>13 || players[i].getJogo().getJogadas(opcao-1)!=-1){//caso o usuário tente escolher uma opcao inexistente ou alguma jogada já feita de novo
+                        //while(verificador==false || opcao<=0|| opcao>13 || players[i].getJogo().getJogadas(opcao-1)!=-1){//caso o usuário tente escolher uma opcao inexistente ou alguma jogada já feita de novo
                             if (teclado.hasNextInt()){//vai exigir que a opcao seja inteira
                                     opcao = teclado.nextInt();
-                                    teclado.nextLine(); // Limpar o buffer de entrada após a leitura do inteiro
-                                    verificador=true;
+                                    //teclado.nextLine(); // Limpar o buffer de entrada após a leitura do inteiro
+                                    // verificador=true;
+                                    if(opcao>=1 && opcao<=13 && players[i].getJogo().getJogadas(opcao - 1) == -1){
+                                        verificador=true;
+                                        this.players[i].getJogo().setJogadas(opcao-1, this.players[i].getJogo().pontuarJogada(opcao));
+                                    }
+                                    else{
+                                        System.out.println("Jogada inválida, escolha outra.");
+                                    }
                             }
-                            else if(verificador ==false||opcao<=0||opcao>13 || players[i].getJogo().getJogadas(opcao-1)!=-1){
-                                System.out.println("Jogada inválida, escolha outra.");
-                                verificador=true;
+                            else {
+                                System.out.println("Entrada inválida. Por favor, digite um número inteiro.");
+                                teclado.nextLine(); // Limpar o buffer de entrada após a entrada inválida
                             }
-                        }
-                        if (players[i].getJogo().getJogadas(opcao-1)==-1) { //se a jogada ainda nao tiver sido feita
-                            this.players[i].getJogo().setJogadas(opcao-1, this.players[i].getJogo().pontuarJogada(opcao));
-                        } 
-                    } while (players[i].getJogo().getJogadas(opcao-1)==-1);
+                            // else if(verificador ==false||opcao<=0||opcao>13 || players[i].getJogo().getJogadas(opcao-1)!=-1){
+                            //     System.out.println("Jogada inválida, escolha outra.");
+                            //     verificador=true;
+                            // }
+                        //}
+                        // if (players[i].getJogo().getJogadas(opcao-1)==-1) { //se a jogada ainda nao tiver sido feita
+                        //     this.players[i].getJogo().setJogadas(opcao-1, this.players[i].getJogo().pontuarJogada(opcao));
+                        // } 
+                    } while (players[i].getJogo().getJogadas(opcao-1)==-1||!verificador);
 
                 }
                 else if (players[i].getTipoJogador().equals("M")|| players[i].getTipoJogador().equals("m")){   // Se for do tipo máquina irá escolher a melhor jogada

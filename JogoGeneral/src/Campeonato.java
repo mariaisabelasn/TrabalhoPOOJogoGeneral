@@ -57,8 +57,8 @@ public class Campeonato implements Serializable {
             if (nome.equals(players[i].getNome())) {
                 players[i].dell();
                 for (j = i; j < (contJogadores); j++) {
-                    if(j+1!=n){//se n for o final pra não puxar lixo
-                         players[j] = players[j+1];// vai "puxando" os que vem depois pro lugar do exclindo e reordenando
+                    if(j+1!=n){//se não for o final, pra não puxar lixo
+                         players[j] = players[j+1];// vai "puxando" os que vem depois pro lugar do excluindo e reordenando
                     }
                 }
                 players[j-1]=null;//zera o ultimo indice
@@ -197,7 +197,7 @@ public class Campeonato implements Serializable {
             FileOutputStream fout = new FileOutputStream(arquivo);
             ObjectOutputStream oos = new ObjectOutputStream(fout);
             // gravando o vetor de pessoas no arquivo
-            oos.writeObject(players); //gravando o dado dos players, que é o único tipo que dá pra gravar e ler por se array(seguindo os exemplos da professora lá da classe pessoa)
+            oos.writeObject(players); //gravando o dado dos players
             oos.flush();
             oos.close();
             fout.close();

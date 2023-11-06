@@ -41,4 +41,4 @@ A aplicação poderá executar n (indeterminadas) rodadas para os jogadores (hum
 
 (6) Ao final de 13 rodadas, com a cartela toda preenchida, somam-se os valores de cada coluna, e o jogador que obtiver mais pontos será considerado o vencedor
 
-testessss
+
